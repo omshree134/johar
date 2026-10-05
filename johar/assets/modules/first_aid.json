@@ -1,0 +1,438 @@
+{
+ "id": "firstaid",
+ "sign": "safeCondition",
+ "icon": "firstaid",
+ "quizSize": 6,
+ "lessons": [
+  {
+   "icon": "warning",
+   "title": {
+    "en": "Ensure scene safety first",
+    "hi": "सबसे पहले घटनास्थल की सुरक्षा देखें"
+   },
+   "body": {
+    "en": "Before rushing to help an injured person, check for ongoing hazards like gas leaks, live wires, falling rocks or fire. Do not become a second victim.",
+    "hi": "घायल की मदद के लिए दौड़ने से पहले गैस रिसाव, नंगे तार, गिरते पत्थर या आग के खतरों को देखें। खुद भी शिकार न बनें।"
+   }
+  },
+  {
+   "icon": "first_aid",
+   "title": {
+    "en": "Control severe bleeding",
+    "hi": "गंभीर खून बहना रोकें"
+   },
+   "body": {
+    "en": "Apply immediate, direct pressure over the wound with a clean cloth or sterile pad. Maintain pressure firmly for at least 10 minutes without lifting.",
+    "hi": "घाव पर साफ़ कपड़े या स्टेरिल पैड से सीधे ज़ोर से दबाएँ। कम से कम 10 मिनट तक बिना उठाए लगातार दबाए रखें।"
+   }
+  },
+  {
+   "icon": "first_aid",
+   "title": {
+    "en": "Treat burns with cool water",
+    "hi": "जलन का इलाज ठंडे पानी से करें"
+   },
+   "body": {
+    "en": "Cool burns immediately under clean, cool running water for at least 10 to 15 minutes. Never apply ice, butter, toothpaste or oil.",
+    "hi": "जले हिस्से को तुरंत 10 से 15 मिनट तक बहते ठंडे पानी के नीचे रखें। बर्फ़, मक्खन, टूथपेस्ट या तेल कभी न लगाएँ।"
+   }
+  },
+  {
+   "icon": "headcount",
+   "title": {
+    "en": "Recognize heat stroke in mines",
+    "hi": "खानों में हीट स्ट्रोक पहचानें"
+   },
+   "body": {
+    "en": "In hot underground spaces, heavy sweating, confusion and dizziness indicate heat exhaustion. Move the worker to shade, loosen clothing, and give small sips of water with electrolytes.",
+    "hi": "गर्म खानों में अत्यधिक पसीना, चक्कर या उलझन हीट स्ट्रोक के लक्षण हैं। मज़दूर को छाँव में लाएँ, कपड़े ढीले करें और ORS/पानी के छोटे घूँट दें।"
+   }
+  },
+  {
+   "icon": "assembly",
+   "title": {
+    "en": "Safe stretcher transport",
+    "hi": "सुरक्षित स्ट्रेचर परिवहन"
+   },
+   "body": {
+    "en": "If a spinal or head injury is suspected after a fall or rock impact, do not bend or twist the victim's neck or back. Immobilize first before moving.",
+    "hi": "ऊँचाई या चट्टान गिरने से सिर/रीढ़ की हड्डी में चोट की आशंका हो तो गर्दन न मोड़ें। पहले स्थिर करके ही स्ट्रेचर पर उठाएँ।"
+   }
+  }
+ ],
+ "arTasks": [
+  {
+   "id": "firstaid_hunt",
+   "type": "findHazards",
+   "timeLimitSec": 75,
+   "prompt": {
+    "en": "Inspect the emergency station. Report every first aid hazard.",
+    "hi": "इमरजेंसी स्टेशन की जाँच करें। प्राथमिक चिकित्सा का हर खतरा रिपोर्ट करें।"
+   },
+   "feedback": {
+    "en": "Keep stretchers clear, eye-wash bottles full, and first aid kits fully stocked.",
+    "hi": "स्ट्रेचर का रास्ता साफ़, आई-वॉश बोतल भरी और फ़र्स्ट ऐड किट हमेशा तैयार रखें।"
+   },
+   "objects": [
+    {
+     "id": "blocked_stretcher",
+     "kind": "hazard",
+     "label": {
+      "en": "Boxes stacked on emergency stretcher",
+      "hi": "इमरजेंसी स्ट्रेचर पर रखे डिब्बे"
+     },
+     "icon": "boxes",
+     "image": "boxes",
+     "bearing": -60,
+     "elevation": -10,
+     "distance": 3,
+     "info": {
+      "en": "Stretchers must be clear and accessible for immediate rescue.",
+      "hi": "स्ट्रेचर तुरंत इस्तेमाल के लिए हमेशा खाली और खुला होना चाहिए।"
+     }
+    },
+    {
+     "id": "empty_eyewash",
+     "kind": "hazard",
+     "label": {
+      "en": "Empty eye wash station bottle",
+      "hi": "खाली आई-वॉश स्टेशन बोतल"
+     },
+     "icon": "bin",
+     "image": "bin",
+     "bearing": 20,
+     "elevation": 0,
+     "distance": 2.5,
+     "info": {
+      "en": "Eye wash bottles must be kept full of clean solution for chemical splashes.",
+      "hi": "रसायन/धूल की स्थिति के लिए आई-वॉश स्टेशन हमेशा भरा होना चाहिए।"
+     }
+    },
+    {
+     "id": "kit_ok",
+     "kind": "safe",
+     "label": {
+      "en": "Stocked first aid kit on wall",
+      "hi": "दीवार पर लगी फ़र्स्ट ऐड किट"
+     },
+     "icon": "first_aid",
+     "image": "gloves",
+     "bearing": 80,
+     "elevation": 10,
+     "distance": 3,
+     "info": {
+      "en": "This is safe: first aid kit is visible and fully stocked.",
+      "hi": "यह सुरक्षित है: फ़र्स्ट ऐड किट तैयार और साफ़ लगी है।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "firstaid_burn",
+   "type": "sequence",
+   "timeLimitSec": 60,
+   "prompt": {
+    "en": "A worker's arm is burned by steam. Perform the correct first aid sequence.",
+    "hi": "कर्मचारी का हाथ भाप से जल गया है। सही क्रम में फ़र्स्ट ऐड दें।"
+   },
+   "feedback": {
+    "en": "Cool with running water, cover with clean sterile bandage, and send for medical help. Never apply ice, butter or oil.",
+    "hi": "बहते पानी से ठंडा करें, स्टेरिल पट्टी से ढँकें, और डॉक्टर के पास भेजें। बर्फ़ या तेल न लगाएँ।"
+   },
+   "objects": [
+    {
+     "id": "cool_water",
+     "kind": "item",
+     "label": {
+      "en": "Cool under clean running water for 10 min",
+      "hi": "10 मिनट तक बहते ठंडे पानी से ठंडा करें"
+     },
+     "icon": "oil_spill",
+     "image": "oil_spill",
+     "bearing": -60,
+     "elevation": -5,
+     "distance": 2.5,
+     "order": 1
+    },
+    {
+     "id": "sterile_bandage",
+     "kind": "item",
+     "label": {
+      "en": "Cover loosely with clean sterile bandage",
+      "hi": "साफ़ स्टेरिल पट्टी से हल्का ढँकें"
+     },
+     "icon": "cloth_mask",
+     "image": "cloth_mask",
+     "bearing": -10,
+     "elevation": -5,
+     "distance": 2.5,
+     "order": 2
+    },
+    {
+     "id": "call_doctor",
+     "kind": "item",
+     "label": {
+      "en": "Transport to medical centre",
+      "hi": "मेडिकल सेंटर ले जाएँ"
+     },
+     "icon": "phone_call",
+     "image": "phone_call",
+     "bearing": 40,
+     "elevation": 0,
+     "distance": 3,
+     "order": 3
+    },
+    {
+     "id": "apply_butter",
+     "kind": "item",
+     "label": {
+      "en": "Rub ice, butter or oil on burn",
+      "hi": "जले पर बर्फ़, मक्खन या तेल रगड़ें"
+     },
+     "icon": "bin",
+     "image": "bin",
+     "bearing": -110,
+     "elevation": -5,
+     "distance": 3,
+     "info": {
+      "en": "Never use ice or grease: ice damages tissue and grease traps heat and infection!",
+      "hi": "बर्फ़ या तेल न लगाएँ: बर्फ़ चमड़ी बिगाड़ती है और तेल गर्मी-इन्फेक्शन फँसाता है!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "firstaid_ppe",
+   "type": "selectSet",
+   "timeLimitSec": 45,
+   "prompt": {
+    "en": "Select essential supplies needed in an emergency first aid kit.",
+    "hi": "इमरजेंसी फ़र्स्ट ऐड किट के लिए ज़रूरी सामान चुनें।"
+   },
+   "feedback": {
+    "en": "Sterile pads, pressure bandages, eyewash, medical gloves, and shears.",
+    "hi": "स्टेरिल पैड, प्रेशर पट्टी, आई वॉश, मेडिकल दस्ताने और कैंची।"
+   },
+   "objects": [
+    {
+     "id": "gauze",
+     "kind": "item",
+     "label": {
+      "en": "Sterile gauze pads",
+      "hi": "स्टेरिल गॉज़ पैड"
+     },
+     "icon": "cloth_mask",
+     "image": "cloth_mask",
+     "bearing": -60,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "bandage",
+     "kind": "item",
+     "label": {
+      "en": "Elastic pressure bandage",
+      "hi": "प्रेशर पट्टी"
+     },
+     "icon": "harness",
+     "image": "harness",
+     "bearing": -20,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "eyewash",
+     "kind": "item",
+     "label": {
+      "en": "Sterile eye wash solution",
+      "hi": "स्टेरिल आई वॉश लिक्विड"
+     },
+     "icon": "gas_detector",
+     "image": "gas_detector",
+     "bearing": 20,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "gloves",
+     "kind": "item",
+     "label": {
+      "en": "Disposal nitrile gloves",
+      "hi": "मेडिकल दस्ताने"
+     },
+     "icon": "gloves",
+     "image": "gloves",
+     "bearing": 60,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "dirty_cloth",
+     "kind": "item",
+     "label": {
+      "en": "Dirty floor rag",
+      "hi": "गंदा फ़र्श का कपड़ा"
+     },
+     "icon": "bin",
+     "image": "bin",
+     "bearing": -100,
+     "elevation": -5,
+     "distance": 2.5
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "a1",
+   "critical": true,
+   "prompt": {
+    "en": "Before approaching an accident scene to give first aid, what is your top priority?",
+    "hi": "प्राथमिक चिकित्सा देने से पहले आपकी पहली प्राथमिकता क्या है?"
+   },
+   "options": [
+    {
+     "en": "Ensure the scene is safe from gas, electricity or collapse hazards",
+     "hi": "देखें कि गैस, करंट या गिरने के खतरों से जगह सुरक्षित है"
+    },
+    {
+     "en": "Rush in immediately without looking",
+     "hi": "बिना देखे तुरंत अंदर दौड़ें"
+    },
+    {
+     "en": "Take photos for evidence",
+     "hi": "फ़ोटो लें"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "First aid providers must ensure personal safety so they do not become casualties.",
+    "hi": "मददगार को पहले खुद सुरक्षित रहना होगा ताकि वह खुद घायल न बने।"
+   }
+  },
+  {
+   "id": "a2",
+   "critical": true,
+   "prompt": {
+    "en": "How should you stop severe bleeding from a wound?",
+    "hi": "घाव से गंभीर खून बहना कैसे रोकना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Apply firm, direct pressure with a sterile pad",
+     "hi": "स्टेरिल पैड से घाव पर सीधा ज़ोर से दबाएँ"
+    },
+    {
+     "en": "Wash with dirty water",
+     "hi": "गंदे पानी से धोएँ"
+    },
+    {
+     "en": "Cover loosely without pressing",
+     "hi": "बिना दबाए ढीला ढँकें"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Direct pressure seals broken blood vessels to stop life-threatening blood loss.",
+    "hi": "सीधा दबाव खून की नसों को दबाकर जानलेवा बहते खून को रोकता है।"
+   }
+  },
+  {
+   "id": "a3",
+   "critical": true,
+   "prompt": {
+    "en": "What should you put on a burn immediately after an accident?",
+    "hi": "हादसे के तुरंत बाद जले हिस्से पर क्या डालना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Clean cool running water for 10-15 minutes",
+     "hi": "10-15 मिनट तक साफ़ बहता ठंडा पानी"
+    },
+    {
+     "en": "Butter or cooking oil",
+     "hi": "मक्खन या तेल"
+    },
+    {
+     "en": "Toothpaste",
+     "hi": "टूथपेस्ट"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Cool water stops heat from continuing to destroy deep skin layers.",
+    "hi": "ठंडा पानी अंदरूनी त्वचा के जलने की प्रक्रिया को तुरंत रोकता है।"
+   }
+  },
+  {
+   "id": "a4",
+   "prompt": {
+    "en": "How do you help a worker showing signs of severe heat exhaustion?",
+    "hi": "हीट स्ट्रोक या अत्यधिक गर्मी से परेशान मज़दूर की मदद कैसे करेंगे?"
+   },
+   "options": [
+    {
+     "en": "Move to a cool shady spot, loosen clothes, and give water/ORS",
+     "hi": "ठंडी छाँव में ले जाएँ, कपड़े ढीले करें और पानी/ORS दें"
+    },
+    {
+     "en": "Force them to keep working",
+     "hi": "उन्हें काम जारी रखने को कहें"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Cooling and oral rehydration prevent fatal heat stroke in deep hot mines.",
+    "hi": "छाँव और पानी देने से जानलेवा हीट स्ट्रोक से बचाव होता है।"
+   }
+  },
+  {
+   "id": "a5",
+   "prompt": {
+    "en": "What should you do if an eye is splashed with mine acid or chemical?",
+    "hi": "अगर आँख में एसिड या केमिकल का छींटा पड़ जाए तो क्या करें?"
+   },
+   "options": [
+    {
+     "en": "Flush immediately with clean eyewash water for 15 minutes",
+     "hi": "तुरंत 15 मिनट तक साफ़ पानी या आई वॉश से धोएँ"
+    },
+    {
+     "en": "Rub the eye with dirty hands",
+     "hi": "गंदे हाथों से आँख मलें"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Continuous flushing dilutes and washes away harmful corrosive chemicals.",
+    "hi": "लगातार धोने से हानिकारक केमिकल बहकर साफ़ हो जाता है।"
+   }
+  },
+  {
+   "id": "a6",
+   "prompt": {
+    "en": "Why should you NOT twist or bend the back of a worker fallen from height?",
+    "hi": "ऊँचाई से गिरे व्यक्ति की रीढ़ या पीठ को क्यों नहीं मोड़ना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Twisting can cause permanent paralysis or spinal cord damage",
+     "hi": "मोड़ने से रीढ़ की हड्डी कटकर स्थायी लकवा हो सकता है"
+    },
+    {
+     "en": "It ruins their clothes",
+     "hi": "कपड़े गंदे हो जाते हैं"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Injured vertebrae can sever the spinal cord if moved carelessly.",
+    "hi": "हिलने-डुलने से टूटी रीढ़ की हड्डी अंदर की नस काट सकती है।"
+   }
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- Who is asking ----------
+    function signedIn() { return request.auth != null; }
+    // Bootstrap admin: custom claim set by scripts/set_admin.js
+    function isClaimAdmin() { return signedIn() && request.auth.token.admin == true; }
+    function ownsNew() { return request.resource.data.deviceUid == request.auth.uid; }
+    function ownsExisting() { return resource.data.deviceUid == request.auth.uid; }
+
+    // Web portal users: portalUsers/{uid} holds role, employer and status.
+    function portalPath() { return /databases/$(database)/documents/portalUsers/$(request.auth.uid); }
+    function portalUser() { return get(portalPath()).data; }
+    function isPortalActive() {
+      return signedIn() && exists(portalPath()) && portalUser().status == 'active';
+    }
+    function hasRole(roles) { return isPortalActive() && portalUser().role in roles; }
+    // Sees every employer: admins and inspectors
+    function isStaff() { return isClaimAdmin() || hasRole(['admin', 'inspector']); }
+    // Manages portal users
+    function isManager() { return isClaimAdmin() || hasRole(['admin']); }
+    // Supervisors see only their own employer
+    function supervises(employer) {
+      return hasRole(['supervisor']) && portalUser().employer == employer;
+    }
+    function canRead() { return isStaff() || supervises(resource.data.employer) || (signedIn() && ownsExisting()); }
+
+    // ---------- Written by the Android app ----------
+    match /workers/{workerId} {
+      allow create: if signedIn() && ownsNew();
+      allow update: if signedIn() && ownsExisting() && ownsNew();
+      allow read:   if canRead();
+    }
+
+    match /attempts/{attemptId} {
+      allow create: if signedIn() && ownsNew()
+                    && request.resource.data.totalPercent is number
+                    && request.resource.data.passed is bool;
+      // Re-sending the identical document after a timeout is allowed;
+      // changing a score after the fact is not.
+      allow update: if signedIn() && ownsExisting()
+                    && request.resource.data.diff(resource.data).affectedKeys().size() == 0;
+      allow read:   if canRead();
+    }
+
+    // 7-day memory checks (retention evidence). Same pattern as attempts.
+    match /refreshers/{refresherId} {
+      allow create: if signedIn() && ownsNew() && request.resource.data.percent is number;
+      allow update: if signedIn() && ownsExisting()
+                    && request.resource.data.diff(resource.data).affectedKeys().size() == 0;
+      allow read:   if canRead();
+    }
+
+    match /certificates/{certId} {
+      // Only the Cloud Function (admin SDK, bypasses rules) creates these.
+      allow get:    if signedIn(); // any verifier can check cancellation by ID
+      allow list:   if canRead();
+      // Admins and inspectors may cancel/reinstate; nothing else may change.
+      allow update: if isStaff()
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                         .hasOnly(['status', 'revokedAt', 'revokedReason'])
+                    && request.resource.data.status in ['active', 'revoked'];
+      allow create, delete: if false;
+    }
+
+    // ---------- Web portal ----------
+    match /portalUsers/{uid} {
+      allow read:   if (signedIn() && request.auth.uid == uid) || isManager();
+      // Anyone signed in with Google may ask for access, but only as a
+      // pending request with no role.
+      allow create: if signedIn() && request.auth.uid == uid
+                    && request.resource.data.status == 'pending'
+                    && request.resource.data.role == 'none';
+      // Users may refresh their own name/photo/last sign-in; nothing else.
+      allow update: if isManager()
+                    || (signedIn() && request.auth.uid == uid
+                        && request.resource.data.diff(resource.data).affectedKeys()
+                             .hasOnly(['lastLoginAt', 'name', 'photoURL']));
+      allow delete: if isManager();
+    }
+
+    // Append-only record of cancellations and access changes.
+    match /auditLog/{entryId} {
+      allow create: if (isClaimAdmin() || isPortalActive())
+                    && request.resource.data.by == request.auth.uid;
+      allow read:   if isManager();
+      allow update, delete: if false;
+    }
+  }
+}

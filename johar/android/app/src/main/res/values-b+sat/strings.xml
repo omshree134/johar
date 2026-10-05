@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Santali (sat). "b+sat" is Android's qualifier for 3-letter language codes. -->
+<resources>
+    <string name="app_name">जोहार</string>
+</resources>

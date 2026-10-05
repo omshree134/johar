@@ -1,0 +1,263 @@
+{
+  "@@locale": "en",
+  "appTitle": "Johar",
+  "chooseLanguage": "Choose your language",
+  "continueButton": "Continue",
+  "registerTitle": "Worker details",
+  "registerHint": "Your supervisor can fill this in with you.",
+  "fieldName": "Full name",
+  "fieldWorkerId": "Worker ID (from employer)",
+  "fieldEmployer": "Company or mine name",
+  "fieldRequired": "Please fill this in",
+  "sectorLabel": "Where do you work?",
+  "sectorCoal": "Coal mine",
+  "sectorSteel": "Steel plant",
+  "sectorMica": "Mica unit",
+  "saveAndStart": "Save and start training",
+  "homeGreeting": "Hello, {name}",
+  "@homeGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeSubtitle": "Finish each training to get your safety certificate.",
+  "changeLanguage": "Change language",
+  "navLearn": "Training",
+  "navCertificates": "Certificates",
+  "navVerify": "Check certificate",
+  "syncPending": "{count} results waiting for internet",
+  "@syncPending": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "syncDone": "All results saved",
+  "syncWorking": "Saving results…",
+  "moduleFire": "Fire and explosion",
+  "moduleGas": "Gas leak and confined space",
+  "moduleMachinery": "Machinery safety",
+  "moduleElectrical": "Electrical safety",
+  "moduleFirstAid": "First aid and evacuation",
+  "comingSoon": "Coming soon",
+  "passedStatus": "Passed",
+  "notStarted": "Not started",
+  "lessonStep": "Step {current} of {total}",
+  "@lessonStep": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "next": "Next",
+  "back": "Back",
+  "startPractice": "Practise with camera",
+  "arModeWorld": "3D AR available on this phone",
+  "arModeCamera": "Camera practice mode",
+  "cameraPermissionNeeded": "Camera access is needed to practise in your real surroundings.",
+  "allowCamera": "Allow camera",
+  "noCameraNote": "No camera found. Practising on a sample workplace.",
+  "timeLeft": "{seconds}s left",
+  "@timeLeft": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "taskCorrect": "Correct",
+  "taskWrong": "Not safe. Try again.",
+  "taskTimeUp": "Time is up",
+  "checkSelection": "Check my choice",
+  "nextTask": "Next task",
+  "startQuiz": "Start the test",
+  "questionOf": "Question {current} of {total}",
+  "@questionOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "checkAnswer": "Check answer",
+  "seeResult": "See my result",
+  "resultPassed": "You passed",
+  "resultFailed": "Not passed yet",
+  "yourScore": "Score: {score}%",
+  "@yourScore": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "criticalMissed": "You missed a life-safety question. These must be answered correctly to pass.",
+  "certificateOnTheWay": "Your certificate will be issued when the phone connects to the internet.",
+  "tryAgain": "Try again",
+  "backHome": "Back to training",
+  "certificatesEmpty": "No certificates yet. Pass a training to get one.",
+  "certPending": "Waiting for internet to issue",
+  "certValidUntil": "Valid until {date}",
+  "@certValidUntil": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "certShowHint": "Show this code to your supervisor or inspector.",
+  "verifyScanHint": "Point the camera at a certificate code",
+  "verifyValid": "Genuine certificate",
+  "verifyExpired": "Certificate has expired",
+  "verifyInvalid": "Not a genuine certificate",
+  "verifyRevoked": "Certificate was cancelled",
+  "verifyNotConfigured": "Verification key not set up in this app build",
+  "verifyOnlineOk": "Also checked online: active",
+  "verifyOnlineUnknown": "Checked offline only",
+  "scanAnother": "Scan another",
+  "workerIdLabel": "Worker ID",
+  "certIdLabel": "Certificate ID",
+  "arIntroTitle": "Practise in your real surroundings",
+  "arIntroStand": "Stand still in a clear space and turn on the spot to look around. Do not walk while practising.",
+  "arTrackingSensor": "Move your phone to look around",
+  "arTrackingTouch": "Drag the screen to look around",
+  "arStart": "Start practice",
+  "arRecenter": "Face forward",
+  "arSelect": "Select",
+  "arFound": "Found {found} of {total}",
+  "@arFound": {
+    "placeholders": {
+      "found": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "arPullPin": "Pull the pin",
+  "arHoldToSpray": "Hold to spray",
+  "arPullPinFirst": "Pull the pin first",
+  "arAimLow": "Aim lower, at the base of the fire",
+  "arSweep": "Sweep side to side",
+  "arFireLabel": "Fire",
+  "arExtinguisherLabel": "Extinguisher",
+  "arFireOut": "Fire is out",
+  "arExtinguisherEmpty": "The extinguisher is empty. Leave the area and raise the alarm.",
+  "arFireTooBig": "The fire is too big. Leave now and raise the alarm.",
+  "arHoldToMeasure": "Hold to measure",
+  "arPointAtLevel": "Point at a level to measure it",
+  "arDecideSafe": "Safe to enter",
+  "arDecideUnsafe": "Not safe: ventilate and test again",
+  "arDetectorTitle": "Gas detector: {level}",
+  "@arDetectorTitle": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "homeJohar": "Johar, {name}!",
+  "@homeJohar": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "progressTitle": "Your safety training",
+  "progressCount": "{done} of {total} trainings passed",
+  "@progressCount": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "sectionTrainings": "Trainings",
+  "workersTitle": "Workers on this phone",
+  "addWorker": "Add a worker",
+  "certExpiresSoon": "{module} certificate expires in {days} days",
+  "@certExpiresSoon": {
+    "placeholders": {
+      "module": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "certExpiredBanner": "{module} certificate has expired",
+  "@certExpiredBanner": {
+    "placeholders": {
+      "module": {
+        "type": "String"
+      }
+    }
+  },
+  "retakeTraining": "Retake training",
+  "refresherBannerTitle": "7-day memory check",
+  "refresherBannerBody": "{module}: 5 quick questions to see what you remember.",
+  "@refresherBannerBody": {
+    "placeholders": {
+      "module": {
+        "type": "String"
+      }
+    }
+  },
+  "refresherStart": "Start check",
+  "refresherResultTitle": "Memory check done",
+  "refresherRemembered": "You remembered {score}%",
+  "@refresherRemembered": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "refresherBefore": "Right after training: {score}%",
+  "@refresherBefore": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "refresherGood": "Well remembered. Keep it up!",
+  "refresherRetake": "Some things were forgotten. Take the training again to refresh them.",
+  "arLookCloser": "Look closer",
+  "arStepOf": "Step {current} of {total}",
+  "@arStepOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "arReportHazard": "Report hazard",
+  "arGoThisWay": "Go this way",
+  "arRemove": "Remove",
+  "arDoNext": "Do this next",
+  "arClose": "Close",
+  "arSelectedPill": "Selected",
+  "arWrongOrder": "Not yet. Think about what must happen first.",
+  "narrationListen": "Listen",
+  "narrationStop": "Stop"
+}

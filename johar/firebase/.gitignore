@@ -1,0 +1,3 @@
+scripts/*.pem
+scripts/service-account*.json
+.firebase/

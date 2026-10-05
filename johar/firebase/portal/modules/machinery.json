@@ -1,0 +1,629 @@
+{
+ "id": "machinery",
+ "sign": "prohibition",
+ "icon": "machinery",
+ "quizSize": 6,
+ "lessons": [
+  {
+   "icon": "machinery",
+   "title": {
+    "en": "Moving parts can pull you in",
+    "hi": "चलते पुर्ज़े आपको खींच सकते हैं"
+   },
+   "body": {
+    "en": "Gears, belts, rollers and conveyors can catch clothing, hair or a hand in a split second. Guards are there to keep you out. Never remove or bypass a guard.",
+    "hi": "गियर, बेल्ट, रोलर और कन्वेयर एक पल में कपड़ा, बाल या हाथ पकड़ सकते हैं। गार्ड आपको दूर रखने के लिए हैं। गार्ड कभी न हटाएँ, न बायपास करें।"
+   }
+  },
+  {
+   "icon": "warning",
+   "title": {
+    "en": "Nothing loose near machines",
+    "hi": "मशीन के पास कुछ भी ढीला नहीं"
+   },
+   "body": {
+    "en": "Tie back long hair. No scarves, dupattas, chains, watches or loose sleeves. Do not wear gloves near rotating drills or lathes: a glove can be caught and drag your hand in.",
+    "hi": "लंबे बाल बाँधें। दुपट्टा, स्कार्फ़, चेन, घड़ी या ढीली आस्तीन नहीं। घूमती ड्रिल या खराद के पास दस्ताने न पहनें: दस्ताना फँसकर हाथ अंदर खींच सकता है।"
+   }
+  },
+  {
+   "icon": "warning",
+   "title": {
+    "en": "Stop, isolate, lock, tag",
+    "hi": "रोकें, बिजली काटें, ताला, टैग"
+   },
+   "body": {
+    "en": "Before cleaning, clearing a jam or repairing: stop the machine, switch off and isolate the power, put your own lock on the switch, hang a danger tag, then try to start it to prove it is dead.",
+    "hi": "सफ़ाई, जाम हटाने या मरम्मत से पहले: मशीन रोकें, बिजली बंद करके अलग करें, स्विच पर अपना ताला लगाएँ, खतरे का टैग लटकाएँ, फिर चालू करके देखें कि वह सच में बंद है।"
+   }
+  },
+  {
+   "icon": "warning",
+   "title": {
+    "en": "Know the emergency stop",
+    "hi": "इमरजेंसी स्टॉप पहचानें"
+   },
+   "body": {
+    "en": "The emergency stop is a big red button on a yellow background. Know where it is before you start work, and keep the way to it clear.",
+    "hi": "इमरजेंसी स्टॉप पीली पृष्ठभूमि पर बड़ा लाल बटन होता है। काम शुरू करने से पहले जानें कि यह कहाँ है, और वहाँ तक का रास्ता खुला रखें।"
+   }
+  },
+  {
+   "icon": "check",
+   "title": {
+    "en": "Tools off, guards on",
+    "hi": "औज़ार हटाएँ, गार्ड लगाएँ"
+   },
+   "body": {
+    "en": "After work, take every tool off the machine, put all guards back, and make sure everyone is clear before the machine is restarted.",
+    "hi": "काम के बाद मशीन से हर औज़ार हटाएँ, सभी गार्ड वापस लगाएँ, और मशीन चालू करने से पहले देख लें कि सब दूर हैं।"
+   }
+  }
+ ],
+ "arTasks": [
+  {
+   "id": "machine_hunt",
+   "type": "findHazards",
+   "timeLimitSec": 75,
+   "prompt": {
+    "en": "You are in a workshop. Look all around and report every machine hazard.",
+    "hi": "आप वर्कशॉप में हैं। चारों ओर देखें और मशीन का हर खतरा बताएँ।"
+   },
+   "feedback": {
+    "en": "Guards on, nothing loose, never reach into running machines, and no tools left on machines.",
+    "hi": "गार्ड लगे हों, कुछ ढीला न हो, चलती मशीन में हाथ न डालें, और मशीन पर औज़ार न छोड़ें।"
+   },
+   "objects": [
+    {
+     "id": "gears",
+     "kind": "hazard",
+     "label": {
+      "en": "Gears with the guard removed",
+      "hi": "गार्ड हटाए हुए गियर"
+     },
+     "icon": "warning",
+     "image": "exposed_gears",
+     "bearing": -60,
+     "elevation": -5,
+     "distance": 3,
+     "info": {
+      "en": "Exposed gears can crush fingers. The guard must be back on.",
+      "hi": "खुले गियर उँगलियाँ कुचल सकते हैं। गार्ड वापस लगना चाहिए।"
+     },
+     "description": {
+      "en": "Two gears turning together.",
+      "hi": "साथ घूमते दो गियर।"
+     }
+    },
+    {
+     "id": "scarf",
+     "kind": "hazard",
+     "label": {
+      "en": "Loose scarf near the rollers",
+      "hi": "रोलर के पास ढीला दुपट्टा"
+     },
+     "icon": "warning",
+     "image": "loose_scarf",
+     "bearing": 20,
+     "elevation": 0,
+     "distance": 3,
+     "info": {
+      "en": "Loose cloth can be caught and pull the worker in.",
+      "hi": "ढीला कपड़ा फँसकर मज़दूर को अंदर खींच सकता है।"
+     },
+     "description": {
+      "en": "A long scarf.",
+      "hi": "लंबा दुपट्टा।"
+     }
+    },
+    {
+     "id": "reach",
+     "kind": "hazard",
+     "label": {
+      "en": "Reaching over a moving conveyor",
+      "hi": "चलते कन्वेयर के ऊपर हाथ"
+     },
+     "icon": "warning",
+     "image": "reaching_hand",
+     "bearing": 85,
+     "elevation": -10,
+     "distance": 4,
+     "info": {
+      "en": "Stop and lock the conveyor before touching anything on it.",
+      "hi": "कन्वेयर पर कुछ छूने से पहले उसे रोककर ताला लगाएँ।"
+     }
+    },
+    {
+     "id": "spanner",
+     "kind": "hazard",
+     "label": {
+      "en": "Spanner left on the machine",
+      "hi": "मशीन पर छूटा पाना"
+     },
+     "icon": "warning",
+     "image": "spanner",
+     "bearing": 160,
+     "elevation": -15,
+     "distance": 3,
+     "info": {
+      "en": "Tools left behind fly off when the machine starts.",
+      "hi": "छूटे औज़ार मशीन चलते ही उछलकर लगते हैं।"
+     }
+    },
+    {
+     "id": "estop_ok",
+     "kind": "safe",
+     "label": {
+      "en": "Emergency stop within reach",
+      "hi": "पास में इमरजेंसी स्टॉप"
+     },
+     "icon": "warning",
+     "image": "emergency_stop",
+     "bearing": -120,
+     "elevation": 0,
+     "distance": 3,
+     "info": {
+      "en": "This one is safe: the emergency stop is visible and reachable.",
+      "hi": "यह सुरक्षित है: इमरजेंसी स्टॉप दिखता है और पहुँच में है।"
+     }
+    },
+    {
+     "id": "muffs_ok",
+     "kind": "safe",
+     "label": {
+      "en": "Ear protection at the station",
+      "hi": "स्टेशन पर कान की सुरक्षा"
+     },
+     "icon": "warning",
+     "image": "earmuffs",
+     "bearing": -160,
+     "elevation": 10,
+     "distance": 4,
+     "info": {
+      "en": "This one is safe: hearing protection is ready to use.",
+      "hi": "यह सुरक्षित है: कान की सुरक्षा तैयार है।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "machine_loto",
+   "type": "sequence",
+   "timeLimitSec": 60,
+   "prompt": {
+    "en": "The conveyor is jammed. Do the lockout steps in the right order before you clear it.",
+    "hi": "कन्वेयर जाम है। उसे साफ़ करने से पहले लॉकआउट के चरण सही क्रम में करें।"
+   },
+   "feedback": {
+    "en": "Stop, isolate the power, lock, tag, test that it will not start, and only then work on it. Your lock, your key.",
+    "hi": "रोकें, बिजली अलग करें, ताला, टैग, जाँचें कि चालू न हो, और तभी काम करें। आपका ताला, आपकी चाबी।"
+   },
+   "objects": [
+    {
+     "id": "stop",
+     "kind": "item",
+     "label": {
+      "en": "Press the stop button",
+      "hi": "स्टॉप बटन दबाएँ"
+     },
+     "icon": "warning",
+     "image": "emergency_stop",
+     "bearing": -70,
+     "elevation": 0,
+     "distance": 3,
+     "order": 1
+    },
+    {
+     "id": "isolate",
+     "kind": "item",
+     "label": {
+      "en": "Switch off and isolate the power",
+      "hi": "बिजली बंद करके अलग करें"
+     },
+     "icon": "warning",
+     "image": "power_switch",
+     "bearing": -35,
+     "elevation": 5,
+     "distance": 3,
+     "order": 2
+    },
+    {
+     "id": "lock",
+     "kind": "item",
+     "label": {
+      "en": "Put your own lock on the switch",
+      "hi": "स्विच पर अपना ताला लगाएँ"
+     },
+     "icon": "warning",
+     "image": "padlock",
+     "bearing": 0,
+     "elevation": 0,
+     "distance": 2.5,
+     "order": 3
+    },
+    {
+     "id": "tag",
+     "kind": "item",
+     "label": {
+      "en": "Hang the danger tag",
+      "hi": "खतरे का टैग लटकाएँ"
+     },
+     "icon": "warning",
+     "image": "danger_tag",
+     "bearing": 35,
+     "elevation": 5,
+     "distance": 3,
+     "order": 4
+    },
+    {
+     "id": "test",
+     "kind": "item",
+     "label": {
+      "en": "Try to start it: nothing must move",
+      "hi": "चालू करके देखें: कुछ नहीं हिलना चाहिए"
+     },
+     "icon": "warning",
+     "image": "conveyor",
+     "bearing": 70,
+     "elevation": -10,
+     "distance": 4,
+     "order": 5
+    },
+    {
+     "id": "fix",
+     "kind": "item",
+     "label": {
+      "en": "Clear the jam",
+      "hi": "जाम साफ़ करें"
+     },
+     "icon": "warning",
+     "image": "spanner",
+     "bearing": 110,
+     "elevation": -10,
+     "distance": 3,
+     "order": 6
+    },
+    {
+     "id": "reach_in",
+     "kind": "item",
+     "label": {
+      "en": "Reach in while it runs",
+      "hi": "चलते में हाथ डालें"
+     },
+     "icon": "warning",
+     "image": "reaching_hand",
+     "bearing": -120,
+     "elevation": -10,
+     "distance": 4,
+     "info": {
+      "en": "Never reach into a running machine, even for a second.",
+      "hi": "चलती मशीन में कभी हाथ न डालें, एक पल के लिए भी नहीं।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "machine_ppe",
+   "type": "selectSet",
+   "timeLimitSec": 45,
+   "prompt": {
+    "en": "You will work on a lathe. Turn and select everything that is right, then press Check.",
+    "hi": "आप खराद पर काम करेंगे। घूमकर जो सही है वह सब चुनें, फिर जाँचें दबाएँ।"
+   },
+   "feedback": {
+    "en": "Goggles, ear protection, safety boots and a helmet. No gloves, scarves or watches near rotating parts.",
+    "hi": "चश्मा, कान की सुरक्षा, सेफ़्टी जूते और हेलमेट। घूमते पुर्ज़ों के पास दस्ताने, दुपट्टा या घड़ी नहीं।"
+   },
+   "objects": [
+    {
+     "id": "goggles",
+     "kind": "item",
+     "label": {
+      "en": "Safety goggles",
+      "hi": "सुरक्षा चश्मा"
+     },
+     "icon": "warning",
+     "image": "goggles",
+     "bearing": -66,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true,
+     "description": {
+      "en": "Protect eyes from flying chips.",
+      "hi": "उड़ते टुकड़ों से आँखें बचाता है।"
+     }
+    },
+    {
+     "id": "muffs",
+     "kind": "item",
+     "label": {
+      "en": "Ear protection",
+      "hi": "कान की सुरक्षा"
+     },
+     "icon": "warning",
+     "image": "earmuffs",
+     "bearing": -44,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "gloves",
+     "kind": "item",
+     "label": {
+      "en": "Work gloves",
+      "hi": "काम के दस्ताने"
+     },
+     "icon": "warning",
+     "image": "gloves",
+     "bearing": -22,
+     "elevation": -5,
+     "distance": 2.5,
+     "description": {
+      "en": "Good for handling sharp sheets, dangerous at rotating parts.",
+      "hi": "धारदार चादर पकड़ने में ठीक, घूमते पुर्ज़ों पर खतरनाक।"
+     }
+    },
+    {
+     "id": "boots",
+     "kind": "item",
+     "label": {
+      "en": "Safety boots",
+      "hi": "सेफ़्टी जूते"
+     },
+     "icon": "warning",
+     "image": "safety_boots",
+     "bearing": 0,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "scarf",
+     "kind": "item",
+     "label": {
+      "en": "Scarf",
+      "hi": "दुपट्टा"
+     },
+     "icon": "warning",
+     "image": "loose_scarf",
+     "bearing": 22,
+     "elevation": -5,
+     "distance": 2.5
+    },
+    {
+     "id": "hat",
+     "kind": "item",
+     "label": {
+      "en": "Helmet",
+      "hi": "हेलमेट"
+     },
+     "icon": "warning",
+     "image": "helmet",
+     "bearing": 44,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "watch",
+     "kind": "item",
+     "label": {
+      "en": "Wrist watch",
+      "hi": "कलाई घड़ी"
+     },
+     "icon": "warning",
+     "image": "wrist_watch",
+     "bearing": 66,
+     "elevation": -5,
+     "distance": 2.5
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "m1",
+   "critical": true,
+   "prompt": {
+    "en": "Before you clean or repair a machine, what must you do?",
+    "hi": "मशीन साफ़ या ठीक करने से पहले क्या करना ज़रूरी है?"
+   },
+   "options": [
+    {
+     "en": "Stop it, isolate the power, lock and tag it",
+     "hi": "रोकें, बिजली अलग करें, ताला और टैग लगाएँ"
+    },
+    {
+     "en": "Work carefully while it runs slowly",
+     "hi": "धीमी चलती मशीन पर सावधानी से काम करें"
+    },
+    {
+     "en": "Ask someone to watch the switch",
+     "hi": "किसी को स्विच पर नज़र रखने को कहें"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Someone can switch it on without knowing you are inside. Your own lock stops that.",
+    "hi": "कोई अनजाने में चालू कर सकता है। आपका अपना ताला इसे रोकता है।"
+   }
+  },
+  {
+   "id": "m2",
+   "critical": true,
+   "prompt": {
+    "en": "Can you remove a guard while the machine is running?",
+    "hi": "क्या मशीन चलते समय गार्ड हटा सकते हैं?"
+   },
+   "options": [
+    {
+     "en": "Yes, if you are quick",
+     "hi": "हाँ, अगर जल्दी करें"
+    },
+    {
+     "en": "No, never",
+     "hi": "नहीं, कभी नहीं"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Guards keep hands and clothing out of moving parts.",
+    "hi": "गार्ड हाथ और कपड़ों को चलते पुर्ज़ों से दूर रखते हैं।"
+   }
+  },
+  {
+   "id": "m3",
+   "prompt": {
+    "en": "Why must scarves, dupattas and long hair be kept away from machines?",
+    "hi": "दुपट्टा, स्कार्फ़ और लंबे बाल मशीन से दूर क्यों रखने चाहिए?"
+   },
+   "options": [
+    {
+     "en": "They can get dirty",
+     "hi": "वे गंदे हो सकते हैं"
+    },
+    {
+     "en": "They can be caught and pull you in",
+     "hi": "वे फँसकर आपको अंदर खींच सकते हैं"
+    },
+    {
+     "en": "They block the view",
+     "hi": "वे नज़र रोकते हैं"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Rotating parts wind cloth and hair in within a second.",
+    "hi": "घूमते पुर्ज़े एक पल में कपड़ा और बाल लपेट लेते हैं।"
+   }
+  },
+  {
+   "id": "m4",
+   "prompt": {
+    "en": "Should you wear gloves when working at a rotating drill or lathe?",
+    "hi": "घूमती ड्रिल या खराद पर काम करते समय दस्ताने पहनने चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Yes, always",
+     "hi": "हाँ, हमेशा"
+    },
+    {
+     "en": "No, a glove can be caught and drag your hand in",
+     "hi": "नहीं, दस्ताना फँसकर हाथ अंदर खींच सकता है"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Gloves protect from sharp edges, but not near rotating parts.",
+    "hi": "दस्ताने धार से बचाते हैं, पर घूमते पुर्ज़ों के पास नहीं।"
+   }
+  },
+  {
+   "id": "m5",
+   "critical": true,
+   "prompt": {
+    "en": "Something is stuck on a running conveyor. What do you do?",
+    "hi": "चलते कन्वेयर पर कुछ फँस गया है। आप क्या करेंगे?"
+   },
+   "options": [
+    {
+     "en": "Pull it out quickly",
+     "hi": "जल्दी से खींच लें"
+    },
+    {
+     "en": "Stop and lock out the conveyor first",
+     "hi": "पहले कन्वेयर रोककर लॉकआउट करें"
+    },
+    {
+     "en": "Push it with a stick while it runs",
+     "hi": "चलते में डंडे से धकेलें"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Many conveyor injuries happen while clearing jams on running belts.",
+    "hi": "चलती बेल्ट पर जाम हटाते समय कन्वेयर की कई चोटें होती हैं।"
+   }
+  },
+  {
+   "id": "m6",
+   "prompt": {
+    "en": "After a repair, what must you check before restarting?",
+    "hi": "मरम्मत के बाद चालू करने से पहले क्या देखना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "All tools removed and guards back on",
+     "hi": "सब औज़ार हटे और गार्ड वापस लगे"
+    },
+    {
+     "en": "The machine is clean",
+     "hi": "मशीन साफ़ है"
+    },
+    {
+     "en": "The supervisor is watching",
+     "hi": "सुपरवाइज़र देख रहा है"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "A tool left inside can fly out, and a missing guard exposes moving parts.",
+    "hi": "अंदर छूटा औज़ार उछल सकता है, और गार्ड न हो तो पुर्ज़े खुले रहते हैं।"
+   }
+  },
+  {
+   "id": "m7",
+   "prompt": {
+    "en": "Who removes your lock from the isolation switch?",
+    "hi": "आइसोलेशन स्विच से आपका ताला कौन हटाएगा?"
+   },
+   "options": [
+    {
+     "en": "Anyone who needs the machine",
+     "hi": "जिसे भी मशीन चाहिए"
+    },
+    {
+     "en": "Only you",
+     "hi": "सिर्फ़ आप"
+    },
+    {
+     "en": "The next shift",
+     "hi": "अगली शिफ़्ट"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Your lock, your key. It comes off only when you are safely clear.",
+    "hi": "आपका ताला, आपकी चाबी। यह तभी हटेगा जब आप सुरक्षित बाहर हों।"
+   }
+  },
+  {
+   "id": "m8",
+   "prompt": {
+    "en": "What does an emergency stop button look like?",
+    "hi": "इमरजेंसी स्टॉप बटन कैसा दिखता है?"
+   },
+   "options": [
+    {
+     "en": "Red button on a yellow background",
+     "hi": "पीली पृष्ठभूमि पर लाल बटन"
+    },
+    {
+     "en": "Green button",
+     "hi": "हरा बटन"
+    },
+    {
+     "en": "Blue switch",
+     "hi": "नीला स्विच"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Learn where it is on every machine you use.",
+    "hi": "जिस मशीन पर काम करें, उस पर इसकी जगह जानें।"
+   }
+  }
+ ]
+}

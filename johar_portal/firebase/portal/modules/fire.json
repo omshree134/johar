@@ -1,0 +1,652 @@
+{
+ "id": "fire",
+ "sign": "fireEquipment",
+ "icon": "fire",
+ "quizSize": 6,
+ "lessons": [
+  {
+   "icon": "alarm",
+   "title": {
+    "en": "Raise the alarm first",
+    "hi": "सबसे पहले अलार्म बजाएँ"
+   },
+   "body": {
+    "en": "Shout \"Fire!\" loudly, press the nearest fire alarm, and tell your supervisor. Others need time to get out.",
+    "hi": "ज़ोर से \"आग!\" चिल्लाएँ, सबसे पास का फायर अलार्म दबाएँ और सुपरवाइज़र को बताएँ। दूसरों को बाहर निकलने का समय चाहिए।"
+   }
+  },
+  {
+   "icon": "exit",
+   "title": {
+    "en": "Know two ways out",
+    "hi": "बाहर निकलने के दो रास्ते जानें"
+   },
+   "body": {
+    "en": "Green signs with a running person show the exit. Never use a lift in a fire. If there is smoke, bend low and move fast, because cleaner air is near the floor.",
+    "hi": "दौड़ते व्यक्ति वाला हरा निशान निकास का रास्ता बताता है। आग में कभी लिफ्ट का उपयोग न करें। धुआँ हो तो झुककर तेज़ी से चलें, क्योंकि ज़मीन के पास हवा साफ़ होती है।"
+   }
+  },
+  {
+   "icon": "extinguisher",
+   "title": {
+    "en": "Pick the right extinguisher",
+    "hi": "सही अग्निशामक चुनें"
+   },
+   "body": {
+    "en": "Water is only for wood, paper and cloth. Never use water on electrical or oil fires. CO2 works on electrical fires. Dry powder (ABC) works on most fires. Foam is for oil and fuel.",
+    "hi": "पानी सिर्फ़ लकड़ी, कागज़ और कपड़े की आग के लिए है। बिजली या तेल की आग पर कभी पानी न डालें। बिजली की आग पर CO2 काम करता है। सूखा पाउडर (ABC) ज़्यादातर आग पर काम करता है। फोम तेल और ईंधन की आग के लिए है।"
+   }
+  },
+  {
+   "icon": "extinguisher",
+   "title": {
+    "en": "Use it with P-A-S-S",
+    "hi": "P-A-S-S से चलाएँ"
+   },
+   "body": {
+    "en": "Pull the pin. Aim at the base of the fire. Squeeze the handle. Sweep side to side. Stand 2 to 3 metres away with your exit behind you.",
+    "hi": "पिन खींचें। आग की जड़ पर निशाना लगाएँ। हैंडल दबाएँ। दाएँ-बाएँ घुमाएँ। 2 से 3 मीटर दूर खड़े रहें और निकास आपके पीछे हो।"
+   }
+  },
+  {
+   "icon": "assembly",
+   "title": {
+    "en": "Leave and gather",
+    "hi": "बाहर निकलें और इकट्ठा हों"
+   },
+   "body": {
+    "en": "If the fire grows or your exit starts to fill with smoke, stop and leave. Go to the assembly point, do not go back for belongings, and report to the headcount.",
+    "hi": "अगर आग बढ़े या रास्ते में धुआँ भरने लगे, तो रुकें और बाहर निकलें। असेंबली पॉइंट पर जाएँ, सामान लेने वापस न जाएँ और गिनती में अपना नाम बताएँ।"
+   }
+  }
+ ],
+ "arTasks": [
+  {
+   "id": "fire_hunt",
+   "type": "findHazards",
+   "timeLimitSec": 75,
+   "prompt": {
+    "en": "Look all around you. Tap every fire hazard you can find.",
+    "hi": "अपने चारों ओर देखें। आग का हर खतरा ढूँढकर उस पर टैप करें।"
+   },
+   "feedback": {
+    "en": "Clear exits, safe wiring, no smoking near fuel and clean floors near hot work prevent most workplace fires.",
+    "hi": "खुले निकास, सुरक्षित वायरिंग, ईंधन के पास धूम्रपान नहीं, और गर्म काम के पास साफ़ फ़र्श से ज़्यादातर आग रुकती है।"
+   },
+   "objects": [
+    {
+     "id": "blocked_exit",
+     "kind": "hazard",
+     "label": {
+      "en": "Boxes in front of exit",
+      "hi": "निकास के सामने डिब्बे"
+     },
+     "icon": "boxes",
+     "bearing": -70,
+     "elevation": 0,
+     "distance": 5,
+     "info": {
+      "en": "Exits must be kept clear at all times.",
+      "hi": "निकास हमेशा खुले रहने चाहिए।"
+     },
+     "image": "boxes",
+     "description": {
+      "en": "Boxes stacked near a doorway.",
+      "hi": "दरवाज़े के पास रखे डिब्बे।"
+     }
+    },
+    {
+     "id": "socket",
+     "kind": "hazard",
+     "label": {
+      "en": "Overloaded socket",
+      "hi": "ज़्यादा भरा हुआ सॉकेट"
+     },
+     "icon": "socket",
+     "bearing": 45,
+     "elevation": -5,
+     "distance": 3,
+     "info": {
+      "en": "Too many plugs overheat the wiring and start fires.",
+      "hi": "ज़्यादा प्लग से तार गरम होकर आग लगती है।"
+     },
+     "image": "socket",
+     "description": {
+      "en": "A wall socket with many plugs.",
+      "hi": "कई प्लग लगा दीवार का सॉकेट।"
+     }
+    },
+    {
+     "id": "smoking",
+     "kind": "hazard",
+     "label": {
+      "en": "Smoking near fuel drums",
+      "hi": "ईंधन ड्रम के पास धूम्रपान"
+     },
+     "icon": "smoking",
+     "bearing": 160,
+     "elevation": 0,
+     "distance": 6,
+     "info": {
+      "en": "Fuel vapour can catch fire from a single spark.",
+      "hi": "ईंधन की भाप एक चिंगारी से आग पकड़ सकती है।"
+     },
+     "image": "smoking_drums",
+     "description": {
+      "en": "Fuel drums with a lit cigarette nearby.",
+      "hi": "ईंधन ड्रम के पास जलती सिगरेट।"
+     }
+    },
+    {
+     "id": "oil",
+     "kind": "hazard",
+     "label": {
+      "en": "Oil spill near welding",
+      "hi": "वेल्डिंग के पास तेल गिरा"
+     },
+     "icon": "oil",
+     "bearing": -140,
+     "elevation": -25,
+     "distance": 4,
+     "info": {
+      "en": "Welding sparks can ignite spilled oil. Clean it up first.",
+      "hi": "वेल्डिंग की चिंगारी गिरे तेल में आग लगा सकती है। पहले साफ़ करें।"
+     },
+     "image": "oil_spill",
+     "description": {
+      "en": "Spilled oil on the floor.",
+      "hi": "फ़र्श पर गिरा तेल।"
+     }
+    },
+    {
+     "id": "extinguisher_ok",
+     "kind": "safe",
+     "label": {
+      "en": "Extinguisher on its stand",
+      "hi": "स्टैंड पर अग्निशामक"
+     },
+     "icon": "extinguisher",
+     "bearing": 100,
+     "elevation": -5,
+     "distance": 4,
+     "info": {
+      "en": "This one is safe: extinguishers must be visible and easy to reach.",
+      "hi": "यह सुरक्षित है: अग्निशामक दिखाई देना और आसानी से पहुँच में होना चाहिए।"
+     },
+     "image": "extinguisher",
+     "description": {
+      "en": "A fire extinguisher on its stand.",
+      "hi": "स्टैंड पर रखा अग्निशामक।"
+     }
+    },
+    {
+     "id": "exit_sign_ok",
+     "kind": "safe",
+     "label": {
+      "en": "Lit exit sign",
+      "hi": "जलता हुआ निकास चिह्न"
+     },
+     "icon": "exit",
+     "bearing": -15,
+     "elevation": 20,
+     "distance": 7,
+     "info": {
+      "en": "This one is safe: exit signs must stay lit and visible.",
+      "hi": "यह सुरक्षित है: निकास चिह्न जलता और दिखता रहना चाहिए।"
+     },
+     "image": "exit_sign",
+     "description": {
+      "en": "A green exit sign.",
+      "hi": "हरा निकास चिह्न।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "fire_escape",
+   "type": "chooseExit",
+   "timeLimitSec": 30,
+   "prompt": {
+    "en": "A fire has started and smoke is spreading. Turn around and choose the safest way out.",
+    "hi": "आग लग गई है और धुआँ फैल रहा है। घूमकर देखें और बाहर निकलने का सबसे सुरक्षित रास्ता चुनें।"
+   },
+   "feedback": {
+    "en": "Move away from the fire and smoke, and always use the stairs, never the lift.",
+    "hi": "आग और धुएँ से दूर जाएँ, और हमेशा सीढ़ियों का उपयोग करें, लिफ्ट का कभी नहीं।"
+   },
+   "config": {
+    "spread": {
+     "type": "smoke",
+     "fromBearing": 25,
+     "degPerSec": 5,
+     "maxHalfWidth": 75
+    }
+   },
+   "objects": [
+    {
+     "id": "fire",
+     "kind": "fire",
+     "label": {
+      "en": "Fire",
+      "hi": "आग"
+     },
+     "icon": "fire",
+     "bearing": 25,
+     "elevation": -8,
+     "distance": 7
+    },
+    {
+     "id": "exit_near",
+     "kind": "exit",
+     "label": {
+      "en": "Exit by the fire",
+      "hi": "आग के पास का निकास"
+     },
+     "icon": "exit",
+     "bearing": 55,
+     "elevation": 0,
+     "distance": 8,
+     "info": {
+      "en": "Smoke and fire are blocking this route.",
+      "hi": "धुआँ और आग इस रास्ते को रोक रहे हैं।"
+     },
+     "image": "exit_sign",
+     "description": {
+      "en": "A door close to the fire.",
+      "hi": "आग के पास का दरवाज़ा।"
+     }
+    },
+    {
+     "id": "lift",
+     "kind": "exit",
+     "label": {
+      "en": "Lift",
+      "hi": "लिफ्ट"
+     },
+     "icon": "elevator",
+     "bearing": -75,
+     "elevation": 0,
+     "distance": 6,
+     "info": {
+      "en": "Never use a lift in a fire. The power can fail and trap you.",
+      "hi": "आग में कभी लिफ्ट न लें। बिजली जाने से आप फँस सकते हैं।"
+     },
+     "image": "lift",
+     "description": {
+      "en": "A lift (elevator).",
+      "hi": "लिफ्ट।"
+     }
+    },
+    {
+     "id": "stairs",
+     "kind": "exit",
+     "label": {
+      "en": "Exit to stairs",
+      "hi": "सीढ़ियों का निकास"
+     },
+     "icon": "stairs",
+     "bearing": -165,
+     "elevation": 0,
+     "distance": 8,
+     "correct": true,
+     "image": "stairs",
+     "description": {
+      "en": "Exit leading to the stairs.",
+      "hi": "सीढ़ियों की ओर जाने वाला निकास।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "fire_evacuate",
+   "type": "sequence",
+   "timeLimitSec": 60,
+   "prompt": {
+    "en": "The fire is too big to fight. Look around and do the evacuation steps in the right order.",
+    "hi": "आग बुझाने लायक नहीं है। चारों ओर देखें और निकासी के चरण सही क्रम में करें।"
+   },
+   "feedback": {
+    "en": "Raise the alarm, make your machine safe if you can do it quickly, leave by the nearest safe exit, go to the assembly point and report for the headcount.",
+    "hi": "अलार्म बजाएँ, जल्दी हो सके तो मशीन बंद करें, सबसे पास के सुरक्षित निकास से निकलें, असेंबली पॉइंट पर जाएँ और गिनती में नाम बताएँ।"
+   },
+   "objects": [
+    {
+     "id": "alarm",
+     "kind": "item",
+     "label": {
+      "en": "Press the fire alarm",
+      "hi": "फायर अलार्म दबाएँ"
+     },
+     "icon": "warning",
+     "image": "fire_alarm",
+     "bearing": -50,
+     "elevation": 5,
+     "distance": 3,
+     "order": 1,
+     "description": {
+      "en": "Break-glass fire alarm call point.",
+      "hi": "शीशा तोड़ने वाला फायर अलार्म।"
+     }
+    },
+    {
+     "id": "switch",
+     "kind": "item",
+     "label": {
+      "en": "Switch off your machine",
+      "hi": "अपनी मशीन बंद करें"
+     },
+     "icon": "warning",
+     "image": "power_switch",
+     "bearing": -15,
+     "elevation": 0,
+     "distance": 3,
+     "order": 2,
+     "description": {
+      "en": "Only if it takes a few seconds and is safe.",
+      "hi": "सिर्फ़ तभी जब कुछ सेकंड लगें और सुरक्षित हो।"
+     }
+    },
+    {
+     "id": "exit",
+     "kind": "item",
+     "label": {
+      "en": "Leave by the nearest safe exit",
+      "hi": "सबसे पास के सुरक्षित निकास से निकलें"
+     },
+     "icon": "warning",
+     "image": "exit_sign",
+     "bearing": 25,
+     "elevation": 10,
+     "distance": 5,
+     "order": 3
+    },
+    {
+     "id": "assembly",
+     "kind": "item",
+     "label": {
+      "en": "Go to the assembly point",
+      "hi": "असेंबली पॉइंट पर जाएँ"
+     },
+     "icon": "warning",
+     "image": "assembly_point",
+     "bearing": 70,
+     "elevation": 5,
+     "distance": 6,
+     "order": 4
+    },
+    {
+     "id": "headcount",
+     "kind": "item",
+     "label": {
+      "en": "Report for the headcount",
+      "hi": "गिनती में नाम बताएँ"
+     },
+     "icon": "warning",
+     "image": "headcount",
+     "bearing": 115,
+     "elevation": -5,
+     "distance": 4,
+     "order": 5
+    },
+    {
+     "id": "belongings",
+     "kind": "item",
+     "label": {
+      "en": "Go back for your bag",
+      "hi": "बैग लेने वापस जाएँ"
+     },
+     "icon": "warning",
+     "image": "boxes",
+     "bearing": 160,
+     "elevation": -10,
+     "distance": 4,
+     "info": {
+      "en": "Never go back for belongings. Seconds matter.",
+      "hi": "सामान के लिए कभी वापस न जाएँ। हर सेकंड कीमती है।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "fire_put_out",
+   "type": "extinguish",
+   "timeLimitSec": 45,
+   "prompt": {
+    "en": "A waste bin is on fire. Pull the pin, aim at the base, hold to spray, and sweep side to side.",
+    "hi": "कूड़ेदान में आग लगी है। पिन खींचें, जड़ पर निशाना लगाएँ, छिड़कने के लिए दबाए रखें और दाएँ-बाएँ घुमाएँ।"
+   },
+   "feedback": {
+    "en": "P-A-S-S: Pull, Aim at the base, Squeeze, Sweep. If the fire grows or the extinguisher runs out, leave and raise the alarm.",
+    "hi": "P-A-S-S: खींचें, जड़ पर निशाना, दबाएँ, घुमाएँ। अगर आग बढ़े या अग्निशामक खत्म हो जाए, तो बाहर निकलें और अलार्म बजाएँ।"
+   },
+   "config": {
+    "capacitySec": 12,
+    "startIntensity": 0.5,
+    "growthPerSec": 0.03
+   },
+   "objects": [
+    {
+     "id": "bin_fire",
+     "kind": "fire",
+     "label": {
+      "en": "Bin fire",
+      "hi": "कूड़ेदान की आग"
+     },
+     "icon": "fire",
+     "bearing": 0,
+     "elevation": -20,
+     "distance": 3,
+     "image": "bin"
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "f1",
+   "critical": true,
+   "prompt": {
+    "en": "An electrical panel is on fire. What must you never use?",
+    "hi": "बिजली के पैनल में आग लगी है। किसका उपयोग कभी नहीं करना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Water",
+     "hi": "पानी"
+    },
+    {
+     "en": "CO2 extinguisher",
+     "hi": "CO2 अग्निशामक"
+    },
+    {
+     "en": "Dry powder extinguisher",
+     "hi": "सूखा पाउडर अग्निशामक"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Water conducts electricity and can kill you.",
+    "hi": "पानी में करंट बहता है और यह जानलेवा हो सकता है।"
+   }
+  },
+  {
+   "id": "f2",
+   "prompt": {
+    "en": "You see a fire. What do you do first?",
+    "hi": "आपको आग दिखती है। सबसे पहले क्या करेंगे?"
+   },
+   "options": [
+    {
+     "en": "Raise the alarm",
+     "hi": "अलार्म बजाएँ"
+    },
+    {
+     "en": "Collect your tools",
+     "hi": "अपने औज़ार इकट्ठा करें"
+    },
+    {
+     "en": "Take a photo",
+     "hi": "फ़ोटो लें"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "The alarm gives everyone time to escape.",
+    "hi": "अलार्म से सबको बचने का समय मिलता है।"
+   }
+  },
+  {
+   "id": "f3",
+   "prompt": {
+    "en": "Where should you aim the extinguisher?",
+    "hi": "अग्निशामक का निशाना कहाँ लगाना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "At the flames at the top",
+     "hi": "ऊपर की लपटों पर"
+    },
+    {
+     "en": "At the base of the fire",
+     "hi": "आग की जड़ पर"
+    },
+    {
+     "en": "At the smoke",
+     "hi": "धुएँ पर"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "The fuel burns at the base. Hitting the flames does little.",
+    "hi": "ईंधन जड़ पर जलता है। लपटों पर डालने से कम फ़ायदा होता है।"
+   }
+  },
+  {
+   "id": "f4",
+   "critical": true,
+   "prompt": {
+    "en": "Smoke is filling the corridor. How do you move?",
+    "hi": "गलियारे में धुआँ भर रहा है। आप कैसे चलेंगे?"
+   },
+   "options": [
+    {
+     "en": "Stand tall and walk slowly",
+     "hi": "सीधे खड़े होकर धीरे चलें"
+    },
+    {
+     "en": "Stay low and go to the nearest exit",
+     "hi": "झुककर सबसे पास के निकास तक जाएँ"
+    },
+    {
+     "en": "Wait for the smoke to clear",
+     "hi": "धुआँ हटने का इंतज़ार करें"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Cleaner air stays near the floor. Smoke can knock you out in minutes.",
+    "hi": "साफ़ हवा ज़मीन के पास रहती है। धुआँ कुछ मिनटों में बेहोश कर सकता है।"
+   }
+  },
+  {
+   "id": "f5",
+   "prompt": {
+    "en": "Can you use a lift during a fire?",
+    "hi": "क्या आग के समय लिफ्ट का उपयोग कर सकते हैं?"
+   },
+   "options": [
+    {
+     "en": "Yes, it is faster",
+     "hi": "हाँ, यह तेज़ है"
+    },
+    {
+     "en": "No, use the stairs",
+     "hi": "नहीं, सीढ़ियों का उपयोग करें"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Power can fail and trap you, and lift shafts fill with smoke.",
+    "hi": "बिजली जाने से आप फँस सकते हैं और लिफ्ट में धुआँ भर जाता है।"
+   }
+  },
+  {
+   "id": "f6",
+   "prompt": {
+    "en": "After you get out, where do you go?",
+    "hi": "बाहर निकलने के बाद कहाँ जाएँगे?"
+   },
+   "options": [
+    {
+     "en": "Home",
+     "hi": "घर"
+    },
+    {
+     "en": "The assembly point, to be counted",
+     "hi": "असेंबली पॉइंट, गिनती के लिए"
+    },
+    {
+     "en": "Back inside for your bag",
+     "hi": "बैग लेने अंदर वापस"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "If you are not counted, rescuers may go back in looking for you.",
+    "hi": "अगर आपकी गिनती नहीं हुई तो बचावकर्मी आपको ढूँढने अंदर जा सकते हैं।"
+   }
+  },
+  {
+   "id": "f7",
+   "prompt": {
+    "en": "When should you stop fighting a fire and leave?",
+    "hi": "आग बुझाना कब छोड़कर बाहर निकलना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Only when the extinguisher is empty",
+     "hi": "सिर्फ़ जब अग्निशामक खाली हो जाए"
+    },
+    {
+     "en": "When the fire grows or smoke blocks your exit",
+     "hi": "जब आग बढ़े या धुआँ रास्ता रोकने लगे"
+    },
+    {
+     "en": "Never, keep trying",
+     "hi": "कभी नहीं, कोशिश करते रहें"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Your life comes first. Keep your way out clear.",
+    "hi": "आपकी जान सबसे पहले है। निकलने का रास्ता खुला रखें।"
+   }
+  },
+  {
+   "id": "f8",
+   "prompt": {
+    "en": "How far from the fire should you stand when using an extinguisher?",
+    "hi": "अग्निशामक चलाते समय आग से कितनी दूर खड़े हों?"
+   },
+   "options": [
+    {
+     "en": "Touching distance",
+     "hi": "छूने जितनी दूरी"
+    },
+    {
+     "en": "About 2 to 3 metres",
+     "hi": "लगभग 2 से 3 मीटर"
+    },
+    {
+     "en": "20 metres",
+     "hi": "20 मीटर"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Close enough to reach the fire, far enough to stay safe.",
+    "hi": "आग तक पहुँचने लायक पास, सुरक्षित रहने लायक दूर।"
+   }
+  }
+ ]
+}

@@ -1,0 +1,465 @@
+{
+ "id": "electrical",
+ "sign": "mandatory",
+ "icon": "electric",
+ "quizSize": 6,
+ "lessons": [
+  {
+   "icon": "socket",
+   "title": {
+    "en": "Inspect before you plug in",
+    "hi": "प्लग लगाने से पहले जाँचें"
+   },
+   "body": {
+    "en": "Check cables, plugs and switches for cracks, cuts or exposed copper wire before every shift. Damaged equipment must be tagged and repaired by a qualified electrician.",
+    "hi": "हर शिफ़्ट से पहले केबल, प्लग और स्विच में दरार, कट या खुला ताँबा जाँचें। खराब उपकरण पर टैग लगाएँ और कुशल इलेक्ट्रिशियन से ठीक कराएँ।"
+   }
+  },
+  {
+   "icon": "warning",
+   "title": {
+    "en": "Water and electricity are deadly",
+    "hi": "पानी और करंट का मेल जानलेवा है"
+   },
+   "body": {
+    "en": "Never touch electrical switches, sockets or power tools with wet hands, or while standing in water or damp ground. Water conducts electric current straight to your heart.",
+    "hi": "गीले हाथों से या पानी/सीलन भरे फ़र्श पर खड़े होकर इलेक्ट्रिकल स्विच, सॉकेट या पॉवर टूल न छुएँ। पानी करंट को सीधे दिल तक पहुँचाता है।"
+   }
+  },
+  {
+   "icon": "warning",
+   "title": {
+    "en": "Isolate before electrical work",
+    "hi": "बिजली काम से पहले पावर काटें"
+   },
+   "body": {
+    "en": "Always switch off the main circuit breaker and apply a lockout lock and danger tag before working on electrical lines or machines.",
+    "hi": "बिजली की लाइन या मशीन पर काम से पहले हमेशा मुख्य सर्किट ब्रेकर बंद करें, ताला लगाएँ और खतरे का टैग टाँगें।"
+   }
+  },
+  {
+   "icon": "gloves",
+   "title": {
+    "en": "Wear rated electrical PPE",
+    "hi": "सही इलेक्ट्रिकल PPE पहनें"
+   },
+   "body": {
+    "en": "Wear dry insulated rubber gloves rated for the voltage, dielectric safety boots, and face protection when opening live panels or testing voltage.",
+    "hi": "वोल्टेज क्षमता वाले सूखे रबड़ के इलेक्ट्रिकल दस्ताने, डाईइलेक्ट्रिक जूते और लाइव पैनल खोलते समय चेहरा सुरक्षा चश्मा पहनें।"
+   }
+  },
+  {
+   "icon": "alarm",
+   "title": {
+    "en": "Electric shock response",
+    "hi": "करंट लगने पर तुरंत कदम"
+   },
+   "body": {
+    "en": "Never touch a person who is in contact with a live wire! Cut the main power switch first or use a dry non-conductive wooden stick to push the wire away, then call for emergency medical help.",
+    "hi": "करंट लगे व्यक्ति को न छुएँ! सबसे पहले मुख्य स्विच बंद करें या सूखे लकड़ी के डंडे से तार दूर करें, फिर तुरंत एम्बुलेंस बुलाएँ।"
+   }
+  }
+ ],
+ "arTasks": [
+  {
+   "id": "elec_hunt",
+   "type": "findHazards",
+   "timeLimitSec": 75,
+   "prompt": {
+    "en": "Look around the electrical panel. Report every electrical hazard you find.",
+    "hi": "इलेक्ट्रिकल पैनल के आसपास देखें। बिजली का हर खतरा ढूँढकर रिपोर्ट करें।"
+   },
+   "feedback": {
+    "en": "Intact cables, dry floors, locked panel doors and earthing prevent deadly electrical shocks.",
+    "hi": "सुरक्षित केबल, साफ़ सूखा फ़र्श, बंद पैनल और अर्थिंग से बिजली के बड़े हादसों से बचाव होता है।"
+   },
+   "objects": [
+    {
+     "id": "frayed_cable",
+     "kind": "hazard",
+     "label": {
+      "en": "Damaged cable with copper exposed",
+      "hi": "कटा हुआ केबल, खुला ताँबा"
+     },
+     "icon": "cable",
+     "image": "cable",
+     "bearing": -50,
+     "elevation": -10,
+     "distance": 3,
+     "info": {
+      "en": "Exposed wire can cause severe shock and fire. Replace damaged cables immediately.",
+      "hi": "खुले तार से ज़बरदस्त करंट और आग का खतरा रहता है। तुरंत केबल बदलें।"
+     }
+    },
+    {
+     "id": "wet_floor",
+     "kind": "hazard",
+     "label": {
+      "en": "Water puddle under switchboard",
+      "hi": "स्विचबोर्ड के नीचे पानी जमा"
+     },
+     "icon": "oil",
+     "image": "oil_spill",
+     "bearing": 10,
+     "elevation": -20,
+     "distance": 2.5,
+     "info": {
+      "en": "Water near live switchboards creates an extreme shock hazard.",
+      "hi": "चालू पैनल के पास पानी होना बहुत जानलेवा साबित होता है।"
+     }
+    },
+    {
+     "id": "open_panel",
+     "kind": "hazard",
+     "label": {
+      "en": "Unlocked distribution box door",
+      "hi": "खुला हुआ मेन डिस्ट्रीब्यूशन बॉक्स"
+     },
+     "icon": "socket",
+     "image": "power_switch",
+     "bearing": 70,
+     "elevation": 0,
+     "distance": 3,
+     "info": {
+      "en": "High voltage panels must be kept locked to prevent accidental contact.",
+      "hi": "हाई वोल्टेज पैनल का दरवाज़ा हमेशा ताला बंद होना चाहिए।"
+     }
+    },
+    {
+     "id": "gloves_ok",
+     "kind": "safe",
+     "label": {
+      "en": "Insulated gloves on hook",
+      "hi": "स्टैंड पर लगे इंसुलेटेड दस्ताने"
+     },
+     "icon": "gloves",
+     "image": "gloves",
+     "bearing": -110,
+     "elevation": 0,
+     "distance": 3,
+     "info": {
+      "en": "This is safe: insulated safety gloves are available and dry.",
+      "hi": "यह सुरक्षित है: करंट रोधी दस्ताने सही जगह और सूखे रखे हैं।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "elec_rescue",
+   "type": "sequence",
+   "timeLimitSec": 60,
+   "prompt": {
+    "en": "A worker is shocked by a live wire. Do the rescue steps in the right order.",
+    "hi": "एक कर्मचारी को नंगे तार से करंट लगा है। सही क्रम में बचाव के कदम उठाएँ।"
+   },
+   "feedback": {
+    "en": "Disconnect power or use non-conductive wood first. Touch the victim only after power is isolated.",
+    "hi": "पहले पावर सप्लाई काटें या लकड़ी से तार हटाएँ। बिजली कटने के बाद ही हाथ लगाएँ।"
+   },
+   "objects": [
+    {
+     "id": "cut_power",
+     "kind": "item",
+     "label": {
+      "en": "Switch off the main circuit breaker",
+      "hi": "मुख्य सर्किट ब्रेकर बंद करें"
+     },
+     "icon": "power_switch",
+     "image": "power_switch",
+     "bearing": -60,
+     "elevation": 0,
+     "distance": 3,
+     "order": 1
+    },
+    {
+     "id": "wooden_stick",
+     "kind": "item",
+     "label": {
+      "en": "Use dry wooden stick to push wire away",
+      "hi": "सूखे लकड़ी के डंडे से तार हटाएँ"
+     },
+     "icon": "spanner",
+     "image": "spanner",
+     "bearing": -20,
+     "elevation": -5,
+     "distance": 2.5,
+     "order": 2
+    },
+    {
+     "id": "call_ambulance",
+     "kind": "item",
+     "label": {
+      "en": "Call emergency medical services",
+      "hi": "मेडिकल इमरजेंसी और एम्बुलेंस बुलाएँ"
+     },
+     "icon": "phone_call",
+     "image": "phone_call",
+     "bearing": 20,
+     "elevation": 0,
+     "distance": 3,
+     "order": 3
+    },
+    {
+     "id": "cpr",
+     "kind": "item",
+     "label": {
+      "en": "Check pulse and give CPR if trained",
+      "hi": "साँस/पल्स जाँचें और CPR दें"
+     },
+     "icon": "headcount",
+     "image": "headcount",
+     "bearing": 60,
+     "elevation": -10,
+     "distance": 3,
+     "order": 4
+    },
+    {
+     "id": "touch_bare",
+     "kind": "item",
+     "label": {
+      "en": "Grab the victim with bare hands",
+      "hi": "नंगे हाथों से व्यक्ति को पकड़ें"
+     },
+     "icon": "reaching_hand",
+     "image": "reaching_hand",
+     "bearing": -110,
+     "elevation": -10,
+     "distance": 3,
+     "info": {
+      "en": "Never touch a victim while current is flowing: you will be shocked too!",
+      "hi": "चालू करंट में पीड़ित को कभी न छुएँ: आपको भी करंट लग जाएगा!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "elec_ppe",
+   "type": "selectSet",
+   "timeLimitSec": 45,
+   "prompt": {
+    "en": "Select the correct electrical safety gear for high-voltage panel maintenance.",
+    "hi": "हाई वोल्टेज पैनल रखरखाव के लिए सही इलेक्ट्रिकल सुरक्षा उपकरण चुनें।"
+   },
+   "feedback": {
+    "en": "Insulated gloves, safety boots, face shield, and voltage tester. Remove all metal watches or chains.",
+    "hi": "इंसुलेटेड दस्ताने, सेफ़्टी जूते, सुरक्षा चश्मा और वोल्टेज टेस्टर। धातु की घड़ी या चेन उतार दें।"
+   },
+   "objects": [
+    {
+     "id": "gloves",
+     "kind": "item",
+     "label": {
+      "en": "Insulated rubber gloves",
+      "hi": "रबड़ के इंसुलेटेड दस्ताने"
+     },
+     "icon": "gloves",
+     "image": "gloves",
+     "bearing": -60,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "boots",
+     "kind": "item",
+     "label": {
+      "en": "Dielectric safety boots",
+      "hi": "डाईइलेक्ट्रिक सेफ़्टी जूते"
+     },
+     "icon": "safety_boots",
+     "image": "safety_boots",
+     "bearing": -20,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "goggles",
+     "kind": "item",
+     "label": {
+      "en": "Safety face shield",
+      "hi": "फेस शील्ड / चश्मा"
+     },
+     "icon": "goggles",
+     "image": "goggles",
+     "bearing": 20,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "tester",
+     "kind": "item",
+     "label": {
+      "en": "Tested voltage detector",
+      "hi": "प्रमाणित वोल्टेज टेस्टर"
+     },
+     "icon": "gas_detector",
+     "image": "gas_detector",
+     "bearing": 60,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true
+    },
+    {
+     "id": "metal_watch",
+     "kind": "item",
+     "label": {
+      "en": "Metal wrist watch",
+      "hi": "धातु की कलाई घड़ी"
+     },
+     "icon": "wrist_watch",
+     "image": "wrist_watch",
+     "bearing": -100,
+     "elevation": -5,
+     "distance": 2.5
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "e1",
+   "critical": true,
+   "prompt": {
+    "en": "Someone is trapped by a live electrical wire. What must you do FIRST?",
+    "hi": "कोई व्यक्ति नंगे बिजली तार के संपर्क में है। सबसे पहले क्या करना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Shut off the main power supply",
+     "hi": "मुख्य बिजली सप्लाई बंद करें"
+    },
+    {
+     "en": "Grab their arm and pull hard",
+     "hi": "उनका हाथ पकड़कर खींचें"
+    },
+    {
+     "en": "Pour water over them",
+     "hi": "उनपर पानी डालें"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Touching a victim while current flows will electrocute the rescuer.",
+    "hi": "करंट बहते समय पीड़ित को छूने से बचाने वाले को भी झटका लगेगा।"
+   }
+  },
+  {
+   "id": "e2",
+   "critical": true,
+   "prompt": {
+    "en": "Can you bypass a blown fuse with a thin copper wire?",
+    "hi": "क्या फ़्यूज़ उड़ने पर उसे पतले ताँबे के तार से जोड़कर चला सकते हैं?"
+   },
+   "options": [
+    {
+     "en": "No, it destroys circuit protection and causes fires",
+     "hi": "नहीं, इससे सुरक्षा खत्म होती है और आग लग सकती है"
+    },
+    {
+     "en": "Yes, if no extra fuse is available",
+     "hi": "हाँ, अगर नया फ़्यूज़ न मिले"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Copper wire will not melt on overload, causing short circuit fires.",
+    "hi": "ताँबे का तार ओवरलोड पर नहीं पिघलेगा और शार्ट सर्किट से आग लगाएगा।"
+   }
+  },
+  {
+   "id": "e3",
+   "prompt": {
+    "en": "What type of fire extinguisher is safest for electrical panel fires?",
+    "hi": "इलेक्ट्रिकल पैनल की आग के लिए सबसे सुरक्षित अग्निशामक कौन सा है?"
+   },
+   "options": [
+    {
+     "en": "Carbon Dioxide (CO2) or Dry Powder",
+     "hi": "कार्बन डाइऑक्साइड (CO2) या सूखा पाउडर"
+    },
+    {
+     "en": "Water bucket",
+     "hi": "पानी की बाल्टी"
+    },
+    {
+     "en": "Foam extinguisher",
+     "hi": "फोम अग्निशामक"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "CO2 is non-conductive and leaves no residue on electrical gear.",
+    "hi": "CO2 में करंट नहीं बहता और इलेक्ट्रिकल पुर्ज़ों पर कचरा नहीं छोड़ता।"
+   }
+  },
+  {
+   "id": "e4",
+   "prompt": {
+    "en": "Why should you wear dielectric rubber boots near high-voltage panels?",
+    "hi": "हाई-वोल्टेज पैनल के पास डाईइलेक्ट्रिक रबड़ के जूते क्यों पहनने चाहिए?"
+   },
+   "options": [
+    {
+     "en": "They prevent ground leakage currents from passing through feet",
+     "hi": "वे पैरों से होकर ज़मीन में जाने वाले करंट को रोकते हैं"
+    },
+    {
+     "en": "They keep feet clean from dust",
+     "hi": "वे पैरों को धूल से साफ़ रखते हैं"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Insulated soles break the electrical path to ground.",
+    "hi": "इंसुलेटेड सोले अर्थिंग के रास्ते को काट देती हैं।"
+   }
+  },
+  {
+   "id": "e5",
+   "critical": true,
+   "prompt": {
+    "en": "Can you use portable power tools in wet underground mine puddles?",
+    "hi": "क्या खानों में पानी भरे गड्ढे में खड़े होकर पॉवर टूल चला सकते हैं?"
+   },
+   "options": [
+    {
+     "en": "No, wet conditions drastically increase shock fatality risks",
+     "hi": "नहीं, गीले हालात में करंट से मौत का खतरा बहुत अधिक बढ़ जाता है"
+    },
+    {
+     "en": "Yes, if holding the rubber handle",
+     "hi": "हाँ, अगर रबड़ ग्रिप पकड़ी हो"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Water drastically lowers skin resistance, making even 110V fatal.",
+    "hi": "पानी त्वचा के प्रतिरोध को गिरा देता है, जिससे कम वोल्टेज भी जानलेवा होती है।"
+   }
+  },
+  {
+   "id": "e6",
+   "prompt": {
+    "en": "What is the purpose of earthing (grounding) electrical machines?",
+    "hi": "इलेक्ट्रिकल मशीनों में अर्थिंग (ग्राउंडिंग) का क्या काम है?"
+   },
+   "options": [
+    {
+     "en": "Safely diverts fault current into ground and trips the breaker",
+     "hi": "फ़ॉल्ट करंट को सुरक्षित ज़मीन में भेजकर ब्रेकर गिरा देता है"
+    },
+    {
+     "en": "Increases motor speed",
+     "hi": "मोटर की स्पीड बढ़ाता है"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Earthing keeps machine outer metal bodies at 0 volts.",
+    "hi": "अर्थिंग मशीन के बाहरी बॉडी में करंट नहीं आने देती।"
+   }
+  }
+ ]
+}

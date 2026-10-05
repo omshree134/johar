@@ -1,0 +1,658 @@
+{
+ "id": "gas",
+ "sign": "warning",
+ "icon": "gas",
+ "quizSize": 6,
+ "lessons": [
+  {
+   "icon": "tank",
+   "title": {
+    "en": "What is a confined space?",
+    "hi": "बंद जगह क्या है?"
+   },
+   "body": {
+    "en": "Tanks, pits, sumps, bunkers, sewers and some underground workings. They have small openings and poor air flow, so dangerous air can build up.",
+    "hi": "टंकी, गड्ढे, सम्प, बंकर, सीवर और कुछ भूमिगत कार्यस्थल। इनका मुँह छोटा होता है और हवा कम चलती है, इसलिए खतरनाक हवा जमा हो सकती है।"
+   }
+  },
+  {
+   "icon": "gas",
+   "title": {
+    "en": "Dangers you cannot see",
+    "hi": "खतरे जो दिखते नहीं"
+   },
+   "body": {
+    "en": "The air may have too little oxygen, or poisonous gases like carbon monoxide (CO) and hydrogen sulphide (H2S), or methane that can explode. H2S smells of rotten eggs at first, but strong H2S stops you smelling it.",
+    "hi": "हवा में ऑक्सीजन कम हो सकती है, या कार्बन मोनोऑक्साइड (CO) और हाइड्रोजन सल्फ़ाइड (H2S) जैसी ज़हरीली गैस, या मीथेन जो फट सकती है। H2S पहले सड़े अंडे जैसी गंध देती है, पर ज़्यादा H2S से गंध आना बंद हो जाती है।"
+   }
+  },
+  {
+   "icon": "detector",
+   "title": {
+    "en": "Test the air before entry",
+    "hi": "घुसने से पहले हवा जाँचें"
+   },
+   "body": {
+    "en": "Enter only with a valid work permit. Test the air with a gas detector at the top, middle and bottom. Keep ventilation running and keep testing while you work.",
+    "hi": "सिर्फ़ मान्य वर्क परमिट के साथ अंदर जाएँ। गैस डिटेक्टर से ऊपर, बीच और नीचे हवा जाँचें। वेंटिलेशन चालू रखें और काम के दौरान जाँच करते रहें।"
+   }
+  },
+  {
+   "icon": "harness",
+   "title": {
+    "en": "Wear the right PPE",
+    "hi": "सही सुरक्षा उपकरण पहनें"
+   },
+   "body": {
+    "en": "Gas detector, helmet, safety harness with a lifeline, and breathing apparatus when the permit says so. A cloth mask does not protect you from gas.",
+    "hi": "गैस डिटेक्टर, हेलमेट, लाइफ़लाइन वाली सेफ़्टी हार्नेस, और परमिट में लिखा हो तो श्वास उपकरण। कपड़े का मास्क गैस से नहीं बचाता।"
+   }
+  },
+  {
+   "icon": "buddy",
+   "title": {
+    "en": "Never work alone",
+    "hi": "कभी अकेले काम न करें"
+   },
+   "body": {
+    "en": "A trained attendant stays outside the whole time and keeps in contact. If someone collapses, the attendant raises the alarm and calls the rescue team. Never go in to help without breathing apparatus: many people who die in confined spaces were trying to rescue someone.",
+    "hi": "एक प्रशिक्षित साथी पूरे समय बाहर रहता है और संपर्क बनाए रखता है। अगर कोई गिर जाए तो साथी अलार्म बजाता है और बचाव दल को बुलाता है। बिना श्वास उपकरण के मदद करने अंदर कभी न जाएँ: बंद जगहों में मरने वाले कई लोग किसी को बचाने गए थे।"
+   }
+  }
+ ],
+ "arTasks": [
+  {
+   "id": "gas_test",
+   "type": "gasTest",
+   "timeLimitSec": 75,
+   "prompt": {
+    "en": "You are at a sump opening. Point the phone at each level, hold Measure, then decide if it is safe to enter.",
+    "hi": "आप सम्प के मुँह पर हैं। फ़ोन को हर स्तर की ओर करें, मापने के लिए दबाए रखें, फिर तय करें कि अंदर जाना सुरक्षित है या नहीं।"
+   },
+   "feedback": {
+    "en": "Gas collects at different heights. Here the bottom had low oxygen and high H2S, so nobody enters until it is ventilated and tested again.",
+    "hi": "गैस अलग-अलग ऊँचाई पर जमा होती है। यहाँ नीचे ऑक्सीजन कम और H2S ज़्यादा थी, इसलिए हवा चलाकर दोबारा जाँचने तक कोई अंदर नहीं जाएगा।"
+   },
+   "config": {
+    "holdSec": 2,
+    "limits": {
+     "o2Min": 19.5,
+     "o2Max": 23.5,
+     "h2sMax": 10,
+     "coMax": 35,
+     "lelMax": 10
+    },
+    "levels": [
+     {
+      "id": "top",
+      "label": {
+       "en": "Top",
+       "hi": "ऊपर"
+      },
+      "elevation": -32,
+      "readings": {
+       "o2": 20.9,
+       "h2s": 0,
+       "co": 3,
+       "lel": 0
+      }
+     },
+     {
+      "id": "middle",
+      "label": {
+       "en": "Middle",
+       "hi": "बीच"
+      },
+      "elevation": -50,
+      "readings": {
+       "o2": 20.2,
+       "h2s": 6,
+       "co": 8,
+       "lel": 2
+      }
+     },
+     {
+      "id": "bottom",
+      "label": {
+       "en": "Bottom",
+       "hi": "नीचे"
+      },
+      "elevation": -68,
+      "readings": {
+       "o2": 17.9,
+       "h2s": 28,
+       "co": 12,
+       "lel": 4
+      }
+     }
+    ]
+   },
+   "objects": [
+    {
+     "id": "sump",
+     "kind": "sump",
+     "label": {
+      "en": "Sump opening",
+      "hi": "सम्प का मुँह"
+     },
+     "icon": "tank",
+     "bearing": 0,
+     "elevation": -55,
+     "distance": 1.6
+    }
+   ]
+  },
+  {
+   "id": "gas_escape",
+   "type": "chooseExit",
+   "timeLimitSec": 30,
+   "prompt": {
+    "en": "Gas is leaking from a tank and the wind blows from your left to your right. Turn and choose where to go.",
+    "hi": "एक टंकी से गैस रिस रही है और हवा आपके बाएँ से दाएँ बह रही है। घूमकर चुनें कि कहाँ जाना है।"
+   },
+   "feedback": {
+    "en": "Go upwind to open, higher ground. Gas drifts downwind, and heavy gases collect in pits.",
+    "hi": "हवा की उल्टी ओर खुली, ऊँची जगह पर जाएँ। गैस हवा के साथ बहती है और भारी गैस गड्ढों में जमा होती है।"
+   },
+   "config": {
+    "spread": {
+     "type": "gas",
+     "fromBearing": 0,
+     "towardBearing": 90,
+     "degPerSec": 6,
+     "maxHalfWidth": 50
+    }
+   },
+   "objects": [
+    {
+     "id": "leak",
+     "kind": "gasLeak",
+     "label": {
+      "en": "Leaking tank",
+      "hi": "रिसती टंकी"
+     },
+     "icon": "cylinder",
+     "bearing": 0,
+     "elevation": -5,
+     "distance": 6,
+     "image": "gas_cylinder",
+     "alwaysShowLabel": true
+    },
+    {
+     "id": "upwind",
+     "kind": "exit",
+     "label": {
+      "en": "Upwind, open ground",
+      "hi": "हवा की उल्टी ओर, खुली जगह"
+     },
+     "icon": "wind",
+     "bearing": -100,
+     "elevation": 0,
+     "distance": 8,
+     "correct": true,
+     "image": "windsock",
+     "description": {
+      "en": "Open ground on the side the wind comes from.",
+      "hi": "वह खुली जगह जहाँ से हवा आ रही है।"
+     }
+    },
+    {
+     "id": "downwind",
+     "kind": "exit",
+     "label": {
+      "en": "Shed downwind",
+      "hi": "हवा की दिशा वाला शेड"
+     },
+     "icon": "shed",
+     "bearing": 110,
+     "elevation": 0,
+     "distance": 8,
+     "info": {
+      "en": "The wind carries the gas straight to this shed.",
+      "hi": "हवा गैस को सीधे इस शेड तक ले जाती है।"
+     },
+     "image": "shed",
+     "description": {
+      "en": "A shed on the side the wind blows towards.",
+      "hi": "उस ओर का शेड जिधर हवा बह रही है।"
+     }
+    },
+    {
+     "id": "pit",
+     "kind": "exit",
+     "label": {
+      "en": "Low pit",
+      "hi": "नीचा गड्ढा"
+     },
+     "icon": "pit",
+     "bearing": 175,
+     "elevation": -20,
+     "distance": 6,
+     "info": {
+      "en": "Heavy gases like H2S sink and collect in pits.",
+      "hi": "H2S जैसी भारी गैस नीचे बैठकर गड्ढों में जमा होती है।"
+     },
+     "image": "pit",
+     "description": {
+      "en": "A low pit in the ground.",
+      "hi": "ज़मीन में नीचा गड्ढा।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gas_ppe",
+   "type": "selectSet",
+   "timeLimitSec": 45,
+   "prompt": {
+    "en": "You are about to enter a sump. Turn and select everything you need, then press Check.",
+    "hi": "आप सम्प में जाने वाले हैं। घूमकर वह सब चुनें जो चाहिए, फिर जाँचें दबाएँ।"
+   },
+   "feedback": {
+    "en": "Detector, harness with lifeline, helmet and breathing apparatus. A cloth mask does not stop gas, and a matchbox can ignite it.",
+    "hi": "डिटेक्टर, लाइफ़लाइन वाली हार्नेस, हेलमेट और श्वास उपकरण। कपड़े का मास्क गैस नहीं रोकता, और माचिस से गैस में आग लग सकती है।"
+   },
+   "objects": [
+    {
+     "id": "detector",
+     "kind": "item",
+     "label": {
+      "en": "Gas detector",
+      "hi": "गैस डिटेक्टर"
+     },
+     "icon": "detector",
+     "bearing": -60,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true,
+     "image": "gas_detector",
+     "description": {
+      "en": "Measures oxygen and dangerous gases.",
+      "hi": "ऑक्सीजन और खतरनाक गैसें मापता है।"
+     }
+    },
+    {
+     "id": "harness",
+     "kind": "item",
+     "label": {
+      "en": "Harness and lifeline",
+      "hi": "हार्नेस और लाइफ़लाइन"
+     },
+     "icon": "harness",
+     "bearing": -36,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true,
+     "image": "harness",
+     "description": {
+      "en": "Body harness with a lifeline rope.",
+      "hi": "लाइफ़लाइन रस्सी वाली बॉडी हार्नेस।"
+     }
+    },
+    {
+     "id": "cloth",
+     "kind": "item",
+     "label": {
+      "en": "Cloth mask",
+      "hi": "कपड़े का मास्क"
+     },
+     "icon": "mask",
+     "bearing": -12,
+     "elevation": -5,
+     "distance": 2.5,
+     "image": "cloth_mask",
+     "description": {
+      "en": "A cloth face mask.",
+      "hi": "कपड़े का मास्क।"
+     }
+    },
+    {
+     "id": "helmet",
+     "kind": "item",
+     "label": {
+      "en": "Helmet",
+      "hi": "हेलमेट"
+     },
+     "icon": "helmet",
+     "bearing": 12,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true,
+     "image": "helmet",
+     "description": {
+      "en": "Hard hat.",
+      "hi": "सुरक्षा हेलमेट।"
+     }
+    },
+    {
+     "id": "matches",
+     "kind": "item",
+     "label": {
+      "en": "Matchbox",
+      "hi": "माचिस"
+     },
+     "icon": "matches",
+     "bearing": 36,
+     "elevation": -5,
+     "distance": 2.5,
+     "image": "matchbox",
+     "description": {
+      "en": "A box of matches.",
+      "hi": "माचिस की डिब्बी।"
+     }
+    },
+    {
+     "id": "ba",
+     "kind": "item",
+     "label": {
+      "en": "Breathing apparatus",
+      "hi": "श्वास उपकरण"
+     },
+     "icon": "breathing",
+     "bearing": 60,
+     "elevation": -5,
+     "distance": 2.5,
+     "correct": true,
+     "image": "breathing_apparatus",
+     "description": {
+      "en": "Mask with its own air cylinder.",
+      "hi": "अपने हवा सिलेंडर वाला मास्क।"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gas_buddy",
+   "type": "sequence",
+   "timeLimitSec": 60,
+   "prompt": {
+    "en": "You are the attendant outside a tank. Your buddy inside has stopped answering. Do the right steps in order.",
+    "hi": "आप टंकी के बाहर साथी (अटेंडेंट) हैं। अंदर का साथी जवाब नहीं दे रहा। सही चरण क्रम में करें।"
+   },
+   "feedback": {
+    "en": "Call your buddy, raise the alarm, call the rescue team, then pull them out with the lifeline from outside. Never go in without breathing apparatus: many who die in confined spaces were trying to rescue someone.",
+    "hi": "साथी को पुकारें, अलार्म बजाएँ, बचाव दल बुलाएँ, फिर बाहर से लाइफ़लाइन से खींचें। बिना श्वास उपकरण के अंदर कभी न जाएँ: बंद जगहों में मरने वाले कई लोग किसी को बचाने गए थे।"
+   },
+   "objects": [
+    {
+     "id": "radio",
+     "kind": "item",
+     "label": {
+      "en": "Call your buddy on the radio",
+      "hi": "रेडियो पर साथी को पुकारें"
+     },
+     "icon": "warning",
+     "image": "radio",
+     "bearing": -45,
+     "elevation": 0,
+     "distance": 2.5,
+     "order": 1
+    },
+    {
+     "id": "alarm",
+     "kind": "item",
+     "label": {
+      "en": "Raise the alarm",
+      "hi": "अलार्म बजाएँ"
+     },
+     "icon": "warning",
+     "image": "alarm_bell",
+     "bearing": -15,
+     "elevation": 10,
+     "distance": 3,
+     "order": 2
+    },
+    {
+     "id": "rescue",
+     "kind": "item",
+     "label": {
+      "en": "Call the rescue team",
+      "hi": "बचाव दल को बुलाएँ"
+     },
+     "icon": "warning",
+     "image": "phone_call",
+     "bearing": 15,
+     "elevation": 0,
+     "distance": 2.5,
+     "order": 3
+    },
+    {
+     "id": "winch",
+     "kind": "item",
+     "label": {
+      "en": "Pull them out with the lifeline from outside",
+      "hi": "बाहर से लाइफ़लाइन से खींचें"
+     },
+     "icon": "warning",
+     "image": "tripod_winch",
+     "bearing": 45,
+     "elevation": -15,
+     "distance": 3,
+     "order": 4,
+     "description": {
+      "en": "Rescue tripod and winch over the opening.",
+      "hi": "मुँह के ऊपर बचाव तिपाई और चरखी।"
+     }
+    },
+    {
+     "id": "go_in",
+     "kind": "item",
+     "label": {
+      "en": "Climb in with a cloth mask to help",
+      "hi": "कपड़े का मास्क पहनकर मदद के लिए अंदर जाएँ"
+     },
+     "icon": "warning",
+     "image": "cloth_mask",
+     "bearing": 85,
+     "elevation": -5,
+     "distance": 2.5,
+     "info": {
+      "en": "Never enter to rescue without breathing apparatus. The same gas will knock you out too.",
+      "hi": "बिना श्वास उपकरण के बचाने अंदर कभी न जाएँ। वही गैस आपको भी बेहोश कर देगी।"
+     }
+    }
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "g1",
+   "critical": true,
+   "prompt": {
+    "en": "Your co-worker collapses inside a tank. What do you do?",
+    "hi": "आपका साथी टंकी के अंदर गिर जाता है। आप क्या करेंगे?"
+   },
+   "options": [
+    {
+     "en": "Jump in and pull them out",
+     "hi": "कूदकर उसे बाहर निकालें"
+    },
+    {
+     "en": "Raise the alarm and call the rescue team",
+     "hi": "अलार्म बजाएँ और बचाव दल बुलाएँ"
+    },
+    {
+     "en": "Wait to see if they wake up",
+     "hi": "इंतज़ार करें कि वह होश में आए"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "The same gas will knock you out too. Only rescuers with breathing apparatus should go in.",
+    "hi": "वही गैस आपको भी बेहोश कर देगी। सिर्फ़ श्वास उपकरण वाले बचावकर्मी अंदर जाएँ।"
+   }
+  },
+  {
+   "id": "g2",
+   "prompt": {
+    "en": "What must happen before anyone enters a confined space?",
+    "hi": "बंद जगह में किसी के घुसने से पहले क्या होना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "The air is tested with a gas detector",
+     "hi": "गैस डिटेक्टर से हवा की जाँच"
+    },
+    {
+     "en": "A quick look inside",
+     "hi": "अंदर एक झलक देखना"
+    },
+    {
+     "en": "A smell check",
+     "hi": "सूँघकर जाँच"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Many deadly gases have no smell or colour.",
+    "hi": "कई जानलेवा गैसों की न गंध होती है न रंग।"
+   }
+  },
+  {
+   "id": "g3",
+   "critical": true,
+   "prompt": {
+    "en": "Does a cloth face mask protect you from toxic gas?",
+    "hi": "क्या कपड़े का मास्क ज़हरीली गैस से बचाता है?"
+   },
+   "options": [
+    {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    {
+     "en": "No",
+     "hi": "नहीं"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Cloth stops dust, not gas. You need proper breathing protection.",
+    "hi": "कपड़ा धूल रोकता है, गैस नहीं। सही श्वास सुरक्षा चाहिए।"
+   }
+  },
+  {
+   "id": "g4",
+   "prompt": {
+    "en": "You smell rotten eggs, then the smell goes away. What does it mean?",
+    "hi": "आपको सड़े अंडे की गंध आती है, फिर गंध चली जाती है। इसका क्या मतलब है?"
+   },
+   "options": [
+    {
+     "en": "The gas has cleared",
+     "hi": "गैस हट गई"
+    },
+    {
+     "en": "Strong H2S may have stopped your sense of smell. Leave now.",
+     "hi": "तेज़ H2S ने सूँघने की शक्ति रोक दी हो सकती है। तुरंत निकलें।"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "High levels of H2S deaden the sense of smell. It is a warning, not relief.",
+    "hi": "ज़्यादा H2S सूँघने की शक्ति खत्म कर देती है। यह चेतावनी है, राहत नहीं।"
+   }
+  },
+  {
+   "id": "g5",
+   "prompt": {
+    "en": "What does the attendant (buddy) do?",
+    "hi": "साथी (अटेंडेंट) क्या करता है?"
+   },
+   "options": [
+    {
+     "en": "Stays outside, keeps contact, calls for help",
+     "hi": "बाहर रहता है, संपर्क रखता है, मदद बुलाता है"
+    },
+    {
+     "en": "Goes in to help with the work",
+     "hi": "काम में मदद के लिए अंदर जाता है"
+    },
+    {
+     "en": "Leaves once work starts",
+     "hi": "काम शुरू होते ही चला जाता है"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "The attendant is the lifeline. They must never leave the entrance.",
+    "hi": "साथी जीवनरेखा है। उसे कभी प्रवेश द्वार नहीं छोड़ना चाहिए।"
+   }
+  },
+  {
+   "id": "g6",
+   "prompt": {
+    "en": "During a gas leak, which way should you move?",
+    "hi": "गैस रिसाव के समय किस ओर जाना चाहिए?"
+   },
+   "options": [
+    {
+     "en": "Upwind and away from low ground",
+     "hi": "हवा की उल्टी ओर और निचली जगह से दूर"
+    },
+    {
+     "en": "Downwind",
+     "hi": "हवा की दिशा में"
+    },
+    {
+     "en": "Into a pit to take cover",
+     "hi": "छिपने के लिए गड्ढे में"
+    }
+   ],
+   "correctIndex": 0,
+   "explanation": {
+    "en": "Wind carries gas; heavy gases sink into low places.",
+    "hi": "हवा गैस को उड़ाती है; भारी गैस निचली जगहों में बैठती है।"
+   }
+  },
+  {
+   "id": "g7",
+   "critical": true,
+   "prompt": {
+    "en": "Can you switch on a light or use a phone next to a gas leak?",
+    "hi": "क्या गैस रिसाव के पास लाइट जला सकते हैं या फ़ोन चला सकते हैं?"
+   },
+   "options": [
+    {
+     "en": "Yes",
+     "hi": "हाँ"
+    },
+    {
+     "en": "No, a spark can cause an explosion",
+     "hi": "नहीं, चिंगारी से धमाका हो सकता है"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "Methane and other gases can explode from a small spark. Move away first.",
+    "hi": "मीथेन और अन्य गैसें छोटी चिंगारी से फट सकती हैं। पहले दूर जाएँ।"
+   }
+  },
+  {
+   "id": "g8",
+   "prompt": {
+    "en": "Where do heavy gases like H2S collect?",
+    "hi": "H2S जैसी भारी गैसें कहाँ जमा होती हैं?"
+   },
+   "options": [
+    {
+     "en": "Near the roof",
+     "hi": "छत के पास"
+    },
+    {
+     "en": "In low places like pits and sumps",
+     "hi": "गड्ढों और सम्प जैसी निचली जगहों में"
+    },
+    {
+     "en": "They spread evenly",
+     "hi": "हर जगह बराबर फैलती हैं"
+    }
+   ],
+   "correctIndex": 1,
+   "explanation": {
+    "en": "That is why air is tested at the bottom too.",
+    "hi": "इसीलिए नीचे भी हवा की जाँच की जाती है।"
+   }
+  }
+ ]
+}
